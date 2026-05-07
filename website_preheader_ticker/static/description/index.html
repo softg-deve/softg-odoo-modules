@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a2e;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #1a2b3c 0%, #0f1a26 60%, #714b67 100%);
+            color: #fff;
+            padding: 64px 40px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(113,75,103,0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(26,43,60,0.4) 0%, transparent 50%);
+        }
+
+        .ticker-demo {
+            position: relative;
+            background: #1a2b3c;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            height: 42px;
+            overflow: hidden;
+            max-width: 780px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-demo-track {
+            display: inline-flex;
+            gap: 40px;
+            white-space: nowrap;
+            align-items: center;
+            font-size: 13px;
+            color: #fff;
+            padding-left: 20px;
+            animation: scroll-demo 20s linear infinite;
+        }
+
+        .ticker-demo-track span { color: #714b67; font-size: 8px; }
+
+        @keyframes scroll-demo {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .hero h1 {
+            position: relative;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: #a07090;
+        }
+
+        .hero p {
+            position: relative;
+            font-size: 17px;
+            color: rgba(255,255,255,0.75);
+            max-width: 560px;
+            margin: 0 auto 40px;
+        }
+
+        .badge-row {
+            position: relative;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-size: 13px;
+            color: #fff;
+        }
+
+        /* ── SECTION ── */
+        .section {
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #1a2b3c;
+            border-left: 3px solid #714b67;
+            padding-left: 14px;
+        }
+
+        /* ── FEATURE GRID ── */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: #f8f7fc;
+            border: 1px solid #e8dde8;
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        .feature-icon {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1a2b3c;
+        }
+
+        .feature-card p {
+            font-size: 13.5px;
+            color: #5a5a7a;
+            line-height: 1.55;
+        }
+
+        /* ── MOCKUP SCREEN ── */
+        .screen-wrap {
+            background: #f0edf5;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .screen-header {
+            background: #1a2b3c;
+            border-radius: 6px 6px 0 0;
+            padding: 0;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .screen-ticker {
+            display: flex;
+            overflow: hidden;
+            flex: 1;
+            height: 36px;
+            align-items: center;
+        }
+
+        .screen-ticker-inner {
+            display: inline-flex;
+            gap: 28px;
+            white-space: nowrap;
+            font-size: 12px;
+            color: #fff;
+            padding-left: 16px;
+            animation: scroll-demo 18s linear infinite;
+        }
+
+        .screen-ticker-inner span { color: #a07090; font-size: 7px; }
+
+        .screen-nav {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 24px;
+        }
+
+        .screen-logo {
+            width: 80px;
+            height: 20px;
+            background: #e5e7eb;
+            border-radius: 4px;
+        }
+
+        .screen-nav-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .screen-nav-link {
+            width: 40px;
+            height: 10px;
+            background: #e5e7eb;
+            border-radius: 3px;
+        }
+
+        /* ── BACKEND MOCKUP ── */
+        .backend-wrap {
+            background: #f0edf5;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .backend-frame {
+            background: #1c2333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .backend-topbar {
+            background: #714b67;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 20px;
+        }
+
+        .backend-topbar span {
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .backend-content {
+            background: #1e2840;
+            padding: 20px;
+        }
+
+        .backend-tabs {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .backend-tab {
+            padding: 8px 18px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+
+        .backend-tab.active {
+            color: #fff;
+            border-color: #714b67;
+        }
+
+        .backend-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+        }
+
+        .backend-handle { color: rgba(255,255,255,0.3); font-size: 12px; }
+        .backend-msg { flex: 1; font-size: 13px; color: #fff; }
+        .backend-toggle {
+            width: 32px; height: 16px;
+            background: #714b67;
+            border-radius: 999px;
+            position: relative;
+        }
+        .backend-toggle::after {
+            content: '';
+            position: absolute;
+            right: 2px; top: 2px;
+            width: 12px; height: 12px;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .backend-settings {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 16px 0;
+        }
+
+        .setting-row { }
+        .setting-label { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .setting-value { display: flex; align-items: center; gap: 8px; }
+        .color-swatch { width: 28px; height: 28px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); }
+        .setting-text { font-size: 13px; color: rgba(255,255,255,0.7); font-family: monospace; }
+
+        /* ── HOW IT WORKS ── */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            background: #714b67;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-body h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: #1a2b3c; }
+        .step-body p { font-size: 13.5px; color: #5a5a7a; }
+
+        /* ── SPECS TABLE ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background: #1a2b3c;
+            color: #fff;
+            padding: 10px 16px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+
+        tr:nth-child(even) td { background: #faf9fc; }
+
+        .check { color: #1D9E75; font-weight: 600; }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: #1a2b3c;
+            color: rgba(255,255,255,0.6);
+            padding: 32px 40px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .footer a { color: #a07090; text-decoration: none; }
+        .footer strong { color: #fff; }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="ticker-demo" style="position:relative;z-index:1;">
+        <div class="ticker-demo-track">
+            👋 Welcome! Customize your ticker at Website → Configuration → Preheader Ticker
+            <span>●</span>
+            📞 +357 96699649
+            <span>●</span>
+            🌐 softg.dev
+            <span>●</span>
+            support@softg.dev
+            <span>●</span>
+            👋 Welcome! Customize your ticker at Website → Configuration → Preheader Ticker
+            <span>●</span>
+            📞 +357 96699649
+            <span>●</span>
+            🌐 softg.dev
+            <span>●</span>
+            support@softg.dev
+            <span>●</span>
+        </div>
+    </div>
+
+    <h1 style="position:relative;">Website News <em>Ticker</em> Preheader</h1>
+    <p style="position:relative;">A smooth, always-on scrolling bar above your website header — managed entirely from the Odoo backend. No code. No developer.</p>
+
+    <div class="badge-row">
+        <span class="badge">✓ Odoo 19</span>
+        <span class="badge">✓ Any Theme</span>
+        <span class="badge">✓ Multi-Website</span>
+        <span class="badge">✓ No Code Required</span>
+        <span class="badge">✓ Community &amp; Enterprise</span>
+    </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+    <h2 class="section-title">Everything your customers need</h2>
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon">✏️</div>
+            <h3>Fully Editable Messages</h3>
+            <p>Add, edit, reorder and enable/disable messages directly from the Odoo backend. No XML, no developer needed.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Visual Color Picker</h3>
+            <p>Full-spectrum native color picker for background, text and separator colors. Choose any hex color with a single click.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Adjustable Speed</h3>
+            <p>Type any scroll duration in seconds. Slow for easy reading, fast for urgency — you decide.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h3>Clickable Links</h3>
+            <p>Add a phone, email or URL to any message. Phone and email icons appear automatically when a <code>tel:</code> or <code>mailto:</code> link is set.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3>Multi-Website Ready</h3>
+            <p>Assign messages to a specific website or show them on all sites. Works seamlessly in multi-website setups.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Mobile Responsive</h3>
+            <p>Automatically adjusts font size and scroll speed on small screens. Looks great on every device.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👻</div>
+            <h3>Auto-Hides When Empty</h3>
+            <p>If no messages are active, the bar disappears cleanly. No blank space, no broken layout.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Theme Independent</h3>
+            <p>Works with any Odoo 19 website theme — no dependencies on theme_prime or any third-party theme.</p>
+        </div>
+    </div>
+</div>
+
+<!-- LIVE PREVIEW -->
+<div style="background:#f8f7fc; padding: 60px 40px;">
+    <div style="max-width:900px;margin:0 auto;">
+        <h2 class="section-title">See it on your website</h2>
+
+        <div class="screen-wrap">
+            <div class="screen-header">
+                <div class="screen-ticker">
+                    <div class="screen-ticker-inner">
+                        👋 Welcome! Customize your ticker at Website → Configuration → Preheader Ticker
+                        <span>●</span>
+                        🌐 softg.dev
+                        <span>●</span>
+                        support@softg.dev
+                        <span>●</span>
+                        📞 +357 96699649
+                        <span>●</span>
+                        👋 Welcome! Customize your ticker at Website → Configuration → Preheader Ticker
+                        <span>●</span>
+                        🌐 softg.dev
+                        <span>●</span>
+                        support@softg.dev
+                        <span>●</span>
+                        📞 +357 96699649
+                        <span>●</span>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-nav">
+                <div class="screen-logo"></div>
+                <div class="screen-nav-links">
+                    <div class="screen-nav-link"></div>
+                    <div class="screen-nav-link"></div>
+                    <div class="screen-nav-link"></div>
+                    <div class="screen-nav-link"></div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size:13px;color:#888;text-align:center;margin-top:8px;">The ticker scrolls continuously above the header. Hover pauses the animation so visitors can read or click links.</p>
+    </div>
+</div>
+
+<!-- BACKEND PANEL -->
+<div class="section">
+    <h2 class="section-title">One place for everything</h2>
+    <p style="color:#5a5a7a;margin-bottom:24px;font-size:14px;">All controls live at <strong>Website → Configuration → Preheader Ticker</strong>. Two tabs — Messages and Settings — with no coding required.</p>
+
+    <div class="backend-wrap">
+        <div class="backend-frame">
+            <div class="backend-topbar">
+                <span>Website</span>
+                <span>eCommerce</span>
+                <span>Reporting</span>
+                <span style="border-bottom:2px solid rgba(255,255,255,0.6);padding-bottom:10px;margin-bottom:-10px;">Configuration</span>
+            </div>
+            <div class="backend-content">
+                <div style="font-size:16px;font-weight:600;color:#fff;margin-bottom:16px;">Preheader Ticker</div>
+                <div class="backend-tabs">
+                    <div class="backend-tab active">Messages</div>
+                    <div class="backend-tab">Settings</div>
+                </div>
+
+                <div class="backend-row">
+                    <span class="backend-handle">⠿</span>
+                    <span class="backend-msg">👋 Welcome! Customize your ticker at Website → Configuration → Preheader Ticker</span>
+                    <span style="font-size:11px;color:#888;margin-right:8px;"></span>
+                    <div class="backend-toggle"></div>
+                </div>
+                <div class="backend-row">
+                    <span class="backend-handle">⠿</span>
+                    <span class="backend-msg">🌐 softg.dev</span>
+                    <span style="font-size:11px;color:#888;margin-right:8px;">https://softg.dev</span>
+                    <div class="backend-toggle"></div>
+                </div>
+                <div class="backend-row">
+                    <span class="backend-handle">⠿</span>
+                    <span class="backend-msg">support@softg.dev</span>
+                    <span style="font-size:11px;color:#888;margin-right:8px;">mailto:...</span>
+                    <div class="backend-toggle"></div>
+                </div>
+                <div class="backend-row">
+                    <span class="backend-handle">⠿</span>
+                    <span class="backend-msg">+357 96699649</span>
+                    <span style="font-size:11px;color:#888;margin-right:8px;">tel:+357...</span>
+                    <div class="backend-toggle"></div>
+                </div>
+
+                <div style="color:#714b67;font-size:13px;margin-top:10px;cursor:pointer;">+ Add a line</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="backend-wrap" style="margin-top:20px;">
+        <div class="backend-frame">
+            <div class="backend-content">
+                <div class="backend-tabs">
+                    <div class="backend-tab">Messages</div>
+                    <div class="backend-tab active">Settings</div>
+                </div>
+                <div class="backend-settings">
+                    <div class="setting-row">
+                        <div class="setting-label">Background Color</div>
+                        <div class="setting-value">
+                            <div class="color-swatch" style="background:#1a2b3c;"></div>
+                            <span class="setting-text">#1a2b3c</span>
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-label">Scroll Speed (seconds)</div>
+                        <div class="setting-value">
+                            <span class="setting-text">60</span>
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-label">Text Color</div>
+                        <div class="setting-value">
+                            <div class="color-swatch" style="background:#ffffff;"></div>
+                            <span class="setting-text">#ffffff</span>
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-label">Separator Color</div>
+                        <div class="setting-value">
+                            <div class="color-swatch" style="background:#714b67;"></div>
+                            <span class="setting-text">#714b67</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div style="background:#f8f7fc; padding: 60px 40px;">
+    <div style="max-width:900px;margin:0 auto;">
+        <h2 class="section-title">Up and running in 3 steps</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>Install the module</h4>
+                    <p>Go to Apps → search "Website News Ticker Preheader" → Install. Default welcome messages appear immediately on your website after installation.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>Add your messages</h4>
+                    <p>Navigate to Website → Configuration → Preheader Ticker → Messages tab. Delete the defaults and add your own. Drag to reorder. Toggle to enable/disable without deleting.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>Customize the look</h4>
+                    <p>Switch to the Settings tab. Click the color swatches to pick any background, text and separator color. Set the scroll speed. Save. Done.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TECH SPECS -->
+<div class="section">
+    <h2 class="section-title">Technical specifications</h2>
+    <table>
+        <tr><th>Property</th><th>Value</th></tr>
+        <tr><td>Odoo Version</td><td>19.0</td></tr>
+        <tr><td>Edition</td><td>Community &amp; Enterprise</td></tr>
+        <tr><td>Dependencies</td><td>website (standard)</td></tr>
+        <tr><td>Theme Required</td><td>None — works with any theme</td></tr>
+        <tr><td>Animation</td><td>CSS-only (no jQuery, no JS runtime)</td></tr>
+        <tr><td>Mobile Responsive</td><td><span class="check">✓</span></td></tr>
+        <tr><td>Multi-Website</td><td><span class="check">✓</span></td></tr>
+        <tr><td>Multilingual Messages</td><td><span class="check">✓ (translate=True)</span></td></tr>
+        <tr><td>Auto-hide when empty</td><td><span class="check">✓</span></td></tr>
+        <tr><td>Pause on hover</td><td><span class="check">✓</span></td></tr>
+        <tr><td>Clickable links</td><td><span class="check">✓ (tel / mailto / https)</span></td></tr>
+        <tr><td>License</td><td>LGPL-3</td></tr>
+    </table>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>Built by <strong>SoftG</strong> · <a href="https://softg.dev">softg.dev</a> · <a href="mailto:support@softg.dev">support@softg.dev</a> · +357 96699649</p>
+    <p style="margin-top:8px;font-size:12px;">© 2026 SoftG. Licensed under LGPL-3.</p>
+</div>
+
+</body>
+</html>

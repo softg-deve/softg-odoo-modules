@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="wpt_preheader_template" inherit_id="website.layout" name="Website Preheader Ticker" active="True">
+        <xpath expr="//header/*" position="before">
+            <t t-set="wpt_cfg" t-value="env['website.preheader.config'].sudo().get_config()"/>
+            <t t-set="wpt_messages" t-value="wpt_cfg.message_ids.filtered(lambda m: m.active and (not m.website_id or m.website_id.id == website.id))"/>
+            <t t-if="wpt_messages">
+                <t t-set="wpt_bg" t-value="wpt_cfg.bg_color or '#1a2b3c'"/>
+                <t t-set="wpt_txt" t-value="wpt_cfg.text_color or '#ffffff'"/>
+                <t t-set="wpt_sep" t-value="wpt_cfg.sep_color or '#714b67'"/>
+                <t t-set="wpt_spd" t-value="wpt_cfg.speed or 60"/>
+                <div class="wpt-preheader" data-name="Preheader Ticker" t-att-style="'background-color:%s; color:%s;' % (wpt_bg, wpt_txt)">
+                    <div class="container-fluid px-0">
+                        <div class="wpt-ticker-bar">
+                            <div class="wpt-ticker-track-wrap">
+                                <div class="wpt-ticker-track" t-att-style="'animation-duration:%ss;' % wpt_spd">
+                                    <t t-foreach="wpt_messages" t-as="msg">
+                                        <t t-if="msg.href">
+                                            <a t-att-href="msg.href" class="wpt-ticker-link" t-att-style="'color:%s;' % wpt_txt">
+                                                <i t-if="msg.href.startswith('tel:')" class="fa fa-phone wpt-icon"/>
+                                                <i t-if="msg.href.startswith('mailto:')" class="fa fa-envelope wpt-icon"/>
+                                                <t t-esc="msg.name"/>
+                                            </a>
+                                        </t>
+                                        <span t-else="" t-esc="msg.name"/>
+                                        <span class="wpt-sep" aria-hidden="true" t-att-style="'color:%s;' % wpt_sep">&#9679;</span>
+                                    </t>
+                                    <t t-foreach="wpt_messages" t-as="msg">
+                                        <t t-if="msg.href">
+                                            <a t-att-href="msg.href" class="wpt-ticker-link" t-att-style="'color:%s;' % wpt_txt">
+                                                <i t-if="msg.href.startswith('tel:')" class="fa fa-phone wpt-icon"/>
+                                                <i t-if="msg.href.startswith('mailto:')" class="fa fa-envelope wpt-icon"/>
+                                                <t t-esc="msg.name"/>
+                                            </a>
+                                        </t>
+                                        <span t-else="" t-esc="msg.name"/>
+                                        <span class="wpt-sep" aria-hidden="true" t-att-style="'color:%s;' % wpt_sep">&#9679;</span>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,79 @@
+// ============================================================
+// Website Preheader Ticker — preheader_ticker.scss
+// All classes prefixed with wpt- to avoid conflicts
+// ============================================================
+
+.wpt-preheader {
+    background-color: #1a2b3c;
+    color: #ffffff;
+
+    a {
+        color: #ffffff !important;
+        text-decoration: none;
+        &:hover { text-decoration: underline; }
+    }
+}
+
+.wpt-ticker-bar {
+    display: flex;
+    align-items: stretch;
+    height: 40px;
+    overflow: hidden;
+}
+
+.wpt-ticker-track-wrap {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.wpt-ticker-track {
+    display: inline-flex;
+    gap: 32px;
+    white-space: nowrap;
+    align-items: center;
+    font-size: 13px;
+    padding-left: 20px;
+    animation: wpt-scroll 60s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.wpt-ticker-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #ffffff !important;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+}
+
+.wpt-icon {
+    font-size: 12px !important;
+    color: #ffffff !important;
+}
+
+.wpt-sep {
+    color: #714b67;
+    font-size: 8px;
+    flex-shrink: 0;
+}
+
+@keyframes wpt-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+// Mobile: smaller font, faster scroll
+@media (max-width: 575px) {
+    .wpt-ticker-track {
+        font-size: 11.5px;
+        animation-duration: 45s;
+        gap: 24px;
+    }
+}

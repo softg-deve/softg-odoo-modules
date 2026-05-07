@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_wpt_config_form" model="ir.ui.view">
+        <field name="name">website.preheader.config.form</field>
+        <field name="model">website.preheader.config</field>
+        <field name="arch" type="xml">
+            <form string="Preheader Ticker" create="false" delete="false">
+                <sheet>
+                    <notebook>
+                        <page string="Messages" name="messages">
+                            <field name="message_ids" context="{'default_config_id': id}">
+                                <list editable="top" string="Messages">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name" string="Message"/>
+                                    <field name="href" string="Link" optional="show"
+                                           placeholder="tel:+... or mailto:... or https://..."/>
+                                    <field name="website_id" optional="hide"/>
+                                    <field name="active" widget="boolean_toggle"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Settings" name="settings">
+                            <group>
+                                <group string="Colors">
+                                    <field name="bg_color" widget="hex_color"/>
+                                    <field name="text_color" widget="hex_color"/>
+                                    <field name="sep_color" widget="hex_color"/>
+                                </group>
+                                <group string="Animation">
+                                    <field name="speed"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wpt_config_server" model="ir.actions.server">
+        <field name="name">Preheader Ticker</field>
+        <field name="model_id" ref="model_website_preheader_config"/>
+        <field name="state">code</field>
+        <field name="code">action = env['website.preheader.config'].action_open_config()</field>
+    </record>
+
+    <menuitem
+        id="menu_wpt_ticker"
+        name="Preheader Ticker"
+        parent="website.menu_website_global_configuration"
+        action="action_wpt_config_server"
+        sequence="50"/>
+
+</odoo>

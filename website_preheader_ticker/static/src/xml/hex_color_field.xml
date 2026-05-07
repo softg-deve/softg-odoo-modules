@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="website_preheader_ticker.HexColorField">
+        <div class="o_field_widget" style="display:flex;align-items:center;gap:10px;">
+            <input
+                type="color"
+                t-att-value="currentValue"
+                t-on-change="onColorChange"
+                style="width:44px;height:32px;padding:2px;cursor:pointer;border:1px solid #ced4da;border-radius:4px;"
+            />
+            <span style="font-family:monospace;font-size:13px;" t-esc="currentValue"/>
+        </div>
+    </t>
+</templates>

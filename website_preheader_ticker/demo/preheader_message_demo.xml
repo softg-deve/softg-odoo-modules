@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="demo_wpt_msg_1" model="website.preheader.message">
+        <field name="name">👋 Welcome!</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="demo_wpt_msg_2" model="website.preheader.message">
+        <field name="name">⭐ Customize your ticker at Website → Configuration → Preheader Ticker</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="demo_wpt_msg_3" model="website.preheader.message">
+        <field name="name">🌐 softg.dev</field>
+        <field name="href">https://www.softg.dev</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="demo_wpt_msg_5" model="website.preheader.message">
+        <field name="name">📧 support@softg.dev</field>
+        <field name="href">mailto:support@softg.dev</field>
+        <field name="sequence">40</field>
+    </record>
+
+<record id="demo_wpt_msg_5" model="website.preheader.message">
+        <field name="name">📞 +357 96699649</field>
+        <field name="href">tel:+35796699649</field>
+        <field name="sequence">50</field>
+    </record>
+
+</odoo>

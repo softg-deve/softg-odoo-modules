@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wpt_msg_designer,wpt.msg.designer,model_website_preheader_message,website.group_website_designer,1,1,1,1
+access_wpt_msg_user,wpt.msg.user,model_website_preheader_message,base.group_user,1,0,0,0
+access_wpt_msg_portal,wpt.msg.portal,model_website_preheader_message,base.group_portal,1,0,0,0
+access_wpt_msg_public,wpt.msg.public,model_website_preheader_message,base.group_public,1,0,0,0
+access_wpt_cfg_designer,wpt.cfg.designer,model_website_preheader_config,website.group_website_designer,1,1,1,1
+access_wpt_cfg_user,wpt.cfg.user,model_website_preheader_config,base.group_user,1,0,0,0
+access_wpt_cfg_public,wpt.cfg.public,model_website_preheader_config,base.group_public,1,0,0,0

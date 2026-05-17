@@ -1,0 +1,143 @@
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 class="oe_slogan" style="color:#1a1a2e;">XML Feed Generator</h2>
+      <h3 class="oe_slogan">One module. Every marketplace. Bazaraki, Google Shopping, Facebook Catalog — and any custom XML schema you need.</h3>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span4" style="text-align:center;padding:20px;">
+      <h3 style="color:#1D9E75;font-size:36px;margin:0;">3</h3>
+      <p style="color:#6b7280;">Presets included</p>
+    </div>
+    <div class="oe_span4" style="text-align:center;padding:20px;">
+      <h3 style="color:#1D9E75;font-size:36px;margin:0;">212</h3>
+      <p style="color:#6b7280;">Bazaraki rubrics bundled</p>
+    </div>
+    <div class="oe_span4" style="text-align:center;padding:20px;">
+      <h3 style="color:#1D9E75;font-size:36px;margin:0;">/feed</h3>
+      <p style="color:#6b7280;">Live polling URL</p>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="color:#1a1a2e;">The Problem</h2>
+      <p style="font-size:15px;color:#374151;">Every marketplace wants your product catalogue as XML. Bazaraki expects &lt;ads&gt;&lt;ad&gt; with &lt;rubric&gt; and &lt;district&gt;. Google Shopping wants &lt;rss&gt;&lt;item&gt; with the g: namespace. Facebook Catalog uses the same RSS shape but different required attributes.</p>
+      <p style="font-size:15px;color:#374151;">Most Odoo shops solve this by paying for a separate per-marketplace connector (€50–200/month each), or by hand-rolling brittle Python scripts that break every time a product field is renamed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="color:#1a1a2e;">The Solution</h2>
+      <p style="font-size:15px;color:#374151;"><strong>Build a Bazaraki feed in 30 seconds:</strong> New Feed → Load Bazaraki Preset → fill in shop contact info → Generate. Your live URL is at <code>yourshop.com/feed/bazaraki.xml</code> — Bazaraki polls it every hour.</p>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="color:#1a1a2e;">What You Get</h2>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">⊕ Live Polling URL</h4>
+      <p>Every feed served at /feed/&lt;code&gt;.xml. Marketplaces poll directly — no SFTP uploads, no manual file delivery.</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">⚙ Editable Mappings</h4>
+      <p>Each XML element is one row: tag, source, value, transform. No code. Reorder, add, remove from the UI.</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">⚡ Three Presets</h4>
+      <p>One-click load for Bazaraki Cyprus, Google Shopping (g: namespace), Facebook Catalog.</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">◉ Four Source Types</h4>
+      <p>Product field path, static value, template with placeholders, image collection (multi-image wrapper).</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">✂ Built-in Transforms</h4>
+      <p>Uppercase, lowercase, strip HTML, round to 2 decimals, ISO date — applied per mapping row.</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;"># Bazaraki Catalogue</h4>
+      <p>212 rubrics + 168 districts pre-loaded. Fuzzy auto-match your Odoo categories. Bulk action on category list.</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">⌚ Cache + Cron</h4>
+      <p>Served from ir.attachment cache. Configurable refresh interval. Hourly cron regenerates active feeds.</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">↹ CDATA Support</h4>
+      <p>Wrap any element in CDATA for HTML descriptions, URLs with ampersands, or any value with special characters.</p>
+    </div>
+    <div class="oe_span4">
+      <h4 style="color:#1D9E75;">▤ Per-product Fields</h4>
+      <p>Condition, brand, warranty months, year, model override, delivery flag — on a new Marketplace Feed tab.</p>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="color:#1a1a2e;">Works With</h2>
+      <ul style="font-size:15px;color:#374151;line-height:2;">
+        <li>Bazaraki.com (Cyprus marketplace)</li>
+        <li>Google Shopping Merchant Center</li>
+        <li>Facebook Catalog Manager</li>
+        <li>softg_product_image_publisher — populates image URLs used by image_collection source type</li>
+        <li>softg_product_public_url — populates public_url used as &lt;item_link&gt; in every feed</li>
+        <li>Any feed-consuming marketplace that accepts XML over HTTPS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="color:#1a1a2e;">Installation</h2>
+      <ol style="font-size:15px;color:#374151;line-height:2;">
+        <li>Install the module from the Odoo Apps Store</li>
+        <li>Go to Website → Feed Generator → New Feed</li>
+        <li>Click "Load Bazaraki Preset" (or Google Shopping / Facebook)</li>
+        <li>Fill in your shop name and contact details</li>
+        <li>Click Generate — your live URL is ready immediately</li>
+        <li>Submit the URL to Bazaraki / Google / Facebook</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span6">
+      <h3 style="color:#1a1a2e;">At a Glance</h3>
+      <table style="width:100%;font-size:14px;color:#374151;">
+        <tr><td style="padding:6px 0;color:#6b7280;">Module name</td><td><strong>softg_xml_feed_generator</strong></td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Version</td><td><strong>19.0.2.1.0</strong></td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Odoo target</td><td><strong>19 Community + Enterprise</strong></td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">License</td><td><strong>OPL-1</strong></td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Dependencies</td><td><strong>base, website_sale</strong></td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Models added</td><td><strong>4 new models</strong></td></tr>
+        <tr><td style="padding:6px 0;color:#6b7280;">Lines of code</td><td><strong>~1,500 Python + XML</strong></td></tr>
+      </table>
+    </div>
+    <div class="oe_span6">
+      <h3 style="color:#1a1a2e;">Support</h3>
+      <p style="font-size:15px;color:#374151;">Email: <strong>support@softg.dev</strong></p>
+      <p style="font-size:15px;color:#374151;">Website: <strong>softg.dev</strong></p>
+      <p style="font-size:15px;color:#374151;">Free updates for the 19.0 major version included. Backports to 16.0, 17.0, 18.0 available on request.</p>
+    </div>
+  </div>
+</section>

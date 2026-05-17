@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.sg-wrap{background:#080C14;color:#E2E8F0;font-family:'DM Mono',monospace;width:100%;overflow:hidden}
+.sg-hero{padding:60px 48px 48px;background:linear-gradient(135deg,#080C14 60%,#0d1a14);border-bottom:1px solid rgba(0,229,160,.15);position:relative}
+.sg-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,229,160,.12),transparent 70%);pointer-events:none}
+.sg-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,229,160,.3);background:rgba(0,229,160,.06);padding:6px 14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#00E5A0;margin-bottom:24px}
+.sg-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#00E5A0;box-shadow:0 0 10px #00E5A0;animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.3}}
+.sg-h1{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;line-height:.95;letter-spacing:-.03em;margin-bottom:14px}
+.sg-h1 em{font-style:normal;color:#00E5A0}
+.sg-sub{font-size:12px;color:#64748B;line-height:1.75;max-width:540px;margin-bottom:40px}
+.sg-stats{display:flex;gap:0;border:1px solid rgba(255,255,255,.08);width:fit-content}
+.sg-stat{padding:18px 32px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+.sg-stat:last-child{border-right:none}
+.sg-stat-n{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:#00E5A0;display:block;letter-spacing:-.02em}
+.sg-stat-l{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#475569;margin-top:3px;display:block}
+
+.sg-problem{margin:0;padding:48px;background:#0E1420;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.sg-section-tag{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#475569;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.sg-section-tag::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07)}
+.sg-h2{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;letter-spacing:-.025em;margin-bottom:12px;line-height:1.1}
+.sg-p{font-size:11px;color:#64748B;line-height:1.8;margin-bottom:28px}
+.sg-compare{display:flex;flex-direction:column;gap:12px}
+.sg-comp{padding:16px 18px;font-size:11px;font-family:'DM Mono',monospace;line-height:1.6;border-radius:3px}
+.sg-comp.bad{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.2);color:#FCA5A5}
+.sg-comp.good{background:rgba(0,229,160,.07);border:1px solid rgba(0,229,160,.2);color:#00E5A0}
+.sg-comp-lbl{font-size:9px;letter-spacing:.18em;text-transform:uppercase;opacity:.6;margin-bottom:8px;display:block}
+
+.sg-feats{padding:48px;background:#080C14}
+.sg-feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:32px}
+.sg-feat{padding:28px 22px;background:#0E1420;border:1px solid rgba(255,255,255,.06);position:relative;transition:border-color .2s}
+.sg-feat:hover{border-color:rgba(0,229,160,.25)}
+.sg-feat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#00E5A0,transparent);opacity:0;transition:opacity .2s}
+.sg-feat:hover::before{opacity:1}
+.sg-feat-ico{font-size:20px;margin-bottom:14px;display:block}
+.sg-feat-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
+.sg-feat-desc{font-size:10px;color:#64748B;line-height:1.7}
+
+.sg-presets{padding:0 48px 48px;background:#080C14}
+.sg-preset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.sg-preset{padding:28px;border:1px solid rgba(255,255,255,.07);border-radius:3px;background:#0E1420}
+.sg-preset-tag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:16px;display:inline-block;font-weight:500}
+.bazaraki .sg-preset-tag{background:rgba(0,229,160,.1);color:#00E5A0}
+.google .sg-preset-tag{background:rgba(77,148,255,.1);color:#4D94FF}
+.facebook .sg-preset-tag{background:rgba(255,184,0,.1);color:#FFB800}
+.sg-preset-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:10px;letter-spacing:-.02em}
+.sg-preset-desc{font-size:10px;color:#64748B;line-height:1.7}
+
+.sg-workflow{padding:0 48px 48px;background:#080C14}
+.sg-steps{display:flex;gap:0;border:1px solid rgba(255,255,255,.07);margin-top:28px}
+.sg-step{flex:1;padding:24px 16px;border-right:1px solid rgba(255,255,255,.07);text-align:center}
+.sg-step:last-child{border-right:none}
+.sg-step-n{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#00E5A0;display:block;margin-bottom:10px}
+.sg-step-t{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;margin-bottom:6px}
+.sg-step-d{font-size:9px;color:#475569;line-height:1.6}
+
+.sg-specs{padding:0 48px 48px;background:#0E1420}
+.sg-spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:24px}
+.sg-spec{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#080C14;border:1px solid rgba(255,255,255,.06);font-size:10px}
+.sg-spec-k{color:#475569}
+.sg-spec-v{color:#E2E8F0;font-weight:500;text-align:right}
+.sg-spec-v.ac{color:#00E5A0}
+
+.sg-footer{padding:36px 48px;background:#00E5A0;display:flex;align-items:center;justify-content:space-between}
+.sg-footer-brand{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:#080C14;letter-spacing:-.03em}
+.sg-footer-info{font-size:10px;color:rgba(8,12,20,.6);line-height:1.8}
+.sg-footer-info strong{color:#080C14}
+</style>
+</head>
+<body>
+<div class="sg-wrap">
+
+<div class="sg-hero">
+  <div class="sg-badge">SoftG Official Module · v19.0.2.1.0</div>
+  <h1 class="sg-h1">XML Feed<br><em>Generator</em></h1>
+  <p class="sg-sub">One module. Every marketplace. Build Bazaraki, Google Shopping and Facebook Catalog feeds with live polling URLs — editable mappings, no code, no brittle scripts.</p>
+  <div class="sg-stats">
+    <div class="sg-stat"><span class="sg-stat-n">3</span><span class="sg-stat-l">Presets included</span></div>
+    <div class="sg-stat"><span class="sg-stat-n">212</span><span class="sg-stat-l">Bazaraki rubrics</span></div>
+    <div class="sg-stat"><span class="sg-stat-n">168</span><span class="sg-stat-l">Cyprus districts</span></div>
+    <div class="sg-stat"><span class="sg-stat-n">/feed</span><span class="sg-stat-l">Live polling URL</span></div>
+  </div>
+</div>
+
+<div class="sg-problem">
+  <div class="sg-section-tag">Why you need this</div>
+  <h2 class="sg-h2">Every marketplace invents its own XML schema.</h2>
+  <p class="sg-p">Bazaraki expects &lt;ads&gt;&lt;ad&gt; with rubric and district. Google Shopping wants &lt;rss&gt;&lt;item&gt; with the g: namespace. Facebook uses yet another shape. Most shops pay €50–200/month per connector or hand-roll brittle scripts that break on every product rename.</p>
+  <div class="sg-compare">
+    <div class="sg-comp bad"><span class="sg-comp-lbl">Without this module</span>· One Python script per marketplace · Hard-coded field paths break on rename · Bazaraki rubric IDs typed manually · No preview before going live</div>
+    <div class="sg-comp good"><span class="sg-comp-lbl">With this module</span>· One UI form per marketplace · Field mappings edited in 2 clicks · 212 Bazaraki rubrics bundled in · Preview first 3 items button · Live URL — marketplaces poll directly</div>
+  </div>
+</div>
+
+<div class="sg-feats">
+  <div class="sg-section-tag">What you get</div>
+  <div class="sg-feat-grid">
+    <div class="sg-feat"><span class="sg-feat-ico">⊕</span><div class="sg-feat-name">Live polling URL</div><div class="sg-feat-desc">Every feed at /feed/&lt;code&gt;.xml. Marketplaces poll directly — no SFTP, no manual uploads.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">⚙</span><div class="sg-feat-name">Editable mappings</div><div class="sg-feat-desc">Each XML element is one row. Reorder, add, remove from the UI. No code. Survives every rename.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">◉</span><div class="sg-feat-name">4 source types</div><div class="sg-feat-desc">Product field path, static value, template with {placeholders}, and image collection wrapper.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">✂</span><div class="sg-feat-name">Built-in transforms</div><div class="sg-feat-desc">Uppercase, lowercase, strip HTML, round to 2 decimals, ISO date — per mapping row.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">⌚</span><div class="sg-feat-name">Cache + hourly cron</div><div class="sg-feat-desc">Served from ir.attachment cache. Configurable refresh. Hourly cron regenerates active feeds.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">#</span><div class="sg-feat-name">Bazaraki catalogue</div><div class="sg-feat-desc">212 rubrics + 168 districts pre-loaded. Fuzzy auto-match to your Odoo categories.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">↕</span><div class="sg-feat-name">CDATA support</div><div class="sg-feat-desc">Wrap any element for HTML descriptions, URLs with ampersands, special characters.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">↹</span><div class="sg-feat-name">Per-product fields</div><div class="sg-feat-desc">New Marketplace Feed tab: condition, brand, warranty, year, model override, delivery flag.</div></div>
+    <div class="sg-feat"><span class="sg-feat-ico">▤</span><div class="sg-feat-name">Zero dependencies</div><div class="sg-feat-desc">Pure Python + XML. No external libraries. No infrastructure changes needed.</div></div>
+  </div>
+</div>
+
+<div class="sg-presets">
+  <div class="sg-section-tag">Three presets, one click</div>
+  <div class="sg-preset-grid">
+    <div class="sg-preset bazaraki"><span class="sg-preset-tag">Cyprus Market</span><div class="sg-preset-name">Bazaraki</div><div class="sg-preset-desc">Full Bazaraki Cyprus catalogue bundled. 212 categories + 168 districts. The only Odoo module with native Bazaraki support.</div></div>
+    <div class="sg-preset google"><span class="sg-preset-tag">Search Ads</span><div class="sg-preset-name">Google Shopping</div><div class="sg-preset-desc">Correct g: namespace, required attributes, image and price formatting. Submit URL to Merchant Center and go.</div></div>
+    <div class="sg-preset facebook"><span class="sg-preset-tag">Social Commerce</span><div class="sg-preset-name">Facebook Catalog</div><div class="sg-preset-desc">Facebook and Instagram shopping format. All required fields mapped. One URL for both platforms.</div></div>
+  </div>
+</div>
+
+<div class="sg-workflow">
+  <div class="sg-section-tag">Live in 30 seconds</div>
+  <div class="sg-steps">
+    <div class="sg-step"><span class="sg-step-n">1</span><div class="sg-step-t">New Feed</div><div class="sg-step-d">Create from Feed Generator menu</div></div>
+    <div class="sg-step"><span class="sg-step-n">2</span><div class="sg-step-t">Load Preset</div><div class="sg-step-d">One click for Bazaraki, Google or Facebook</div></div>
+    <div class="sg-step"><span class="sg-step-n">3</span><div class="sg-step-t">Fill Details</div><div class="sg-step-d">Shop name and contact info</div></div>
+    <div class="sg-step"><span class="sg-step-n">4</span><div class="sg-step-t">Generate</div><div class="sg-step-d">yourshop.com/feed/bazaraki.xml</div></div>
+    <div class="sg-step"><span class="sg-step-n">5</span><div class="sg-step-t">Submit URL</div><div class="sg-step-d">Marketplace polls every hour</div></div>
+  </div>
+</div>
+
+<div class="sg-specs">
+  <div class="sg-section-tag">Technical specs</div>
+  <div class="sg-spec-grid">
+    <div class="sg-spec"><span class="sg-spec-k">Module name</span><span class="sg-spec-v ac">softg_xml_feed_generator</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">Version</span><span class="sg-spec-v">19.0.2.1.0</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">Odoo target</span><span class="sg-spec-v">19 Community + Enterprise</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">License</span><span class="sg-spec-v">OPL-1</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">Dependencies</span><span class="sg-spec-v">base, website_sale</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">External libs</span><span class="sg-spec-v ac">None</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">Models added</span><span class="sg-spec-v">4 new models</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">Lines of code</span><span class="sg-spec-v">~1,500 Python + XML</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">Bundled data</span><span class="sg-spec-v">212 rubrics + 168 districts</span></div>
+    <div class="sg-spec"><span class="sg-spec-k">Backports</span><span class="sg-spec-v">16 · 17 · 18 on request</span></div>
+  </div>
+</div>
+
+<div class="sg-footer">
+  <div class="sg-footer-brand">SoftG</div>
+  <div class="sg-footer-info"><strong>Odoo Ready Partner · Cyprus & Canada</strong><br>support@softg.dev · softg.dev</div>
+  <div class="sg-footer-info" style="text-align:right"><strong>Free updates included</strong><br>Backports available on request</div>
+</div>
+
+</div>
+</body>
+</html>

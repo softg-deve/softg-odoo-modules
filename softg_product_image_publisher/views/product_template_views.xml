@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_product_template_form_image_urls" model="ir.ui.view">
+        <field name="name">product.template.form.image.urls</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Image URLs" name="image_urls">
+                    <group>
+                        <group string="Main Image URL">
+                            <field name="image_url" widget="url"
+                                   placeholder="https://example.com/main-image.jpg"/>
+                            <field name="image_url_last_export"/>
+                        </group>
+                        <group string="Actions">
+                            <div class="d-flex flex-column gap-2">
+                                <button type="object"
+                                        name="action_generate_image_urls"
+                                        string="Generate Image URLs"
+                                        icon="fa-cloud-upload"
+                                        class="btn btn-primary btn-sm"
+                                        help="Export the product's images to disk and populate the URL fields below."/>
+                                <button type="action"
+                                        name="%(action_product_image_url_wizard)d"
+                                        string="Bulk-Paste Extra URLs"
+                                        icon="fa-link"
+                                        class="btn btn-secondary btn-sm"
+                                        context="{'default_product_tmpl_id': id}"/>
+                                <button type="object"
+                                        name="action_sync_all_url_images"
+                                        string="Re-fetch from URLs"
+                                        icon="fa-refresh"
+                                        class="btn btn-secondary btn-sm"
+                                        help="Re-download images from any external URLs typed into the fields below (skips self-hosted URLs)."
+                                        confirm="Re-fetch all external URLs for this product. Continue?"/>
+                            </div>
+                        </group>
+                    </group>
+                    <separator string="Extra Image URLs (auto-populated by 'Generate Image URLs')"/>
+                    <group>
+                        <group>
+                            <field name="extra_image_url_1" widget="url"/>
+                            <field name="extra_image_url_2" widget="url"/>
+                            <field name="extra_image_url_3" widget="url"/>
+                            <field name="extra_image_url_4" widget="url"/>
+                            <field name="extra_image_url_5" widget="url"/>
+                            <field name="extra_image_url_6" widget="url"/>
+                            <field name="extra_image_url_7" widget="url"/>
+                        </group>
+                        <group>
+                            <field name="extra_image_url_8" widget="url"/>
+                            <field name="extra_image_url_9" widget="url"/>
+                            <field name="extra_image_url_10" widget="url"/>
+                            <field name="extra_image_url_11" widget="url"/>
+                            <field name="extra_image_url_12" widget="url"/>
+                            <field name="extra_image_url_13" widget="url"/>
+                            <field name="extra_image_url_14" widget="url"/>
+                        </group>
+                    </group>
+                    <div class="text-muted small mt-2">
+                        <i class="fa fa-info-circle"/>
+                        Image filenames are slugified from the product name
+                        (e.g. <code>hp-pavilion-15-notebook.jpg</code>), falling
+                        back to SKU or product ID. To change the on-disk
+                        location or public URL prefix, go to
+                        <b>Settings → Technical → Parameters → System Parameters</b>
+                        and edit <code>softg.image_export.disk_path</code> and
+                        <code>softg.image_export.url_prefix</code>.
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

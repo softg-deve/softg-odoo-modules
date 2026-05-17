@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_product_image_url_wizard_form" model="ir.ui.view">
+        <field name="name">product.image.url.wizard.form</field>
+        <field name="model">product.image.url.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Add Extra Images from URL">
+                <sheet>
+                    <group>
+                        <field name="product_tmpl_id" readonly="1"/>
+                    </group>
+                    <group string="Image URLs (max 14)">
+                        <group>
+                            <field name="url_1" placeholder="https://example.com/img1.jpg"/>
+                            <field name="url_2" placeholder="https://example.com/img2.jpg"/>
+                            <field name="url_3" placeholder="https://example.com/img3.jpg"/>
+                            <field name="url_4" placeholder="https://example.com/img4.jpg"/>
+                            <field name="url_5" placeholder="https://example.com/img5.jpg"/>
+                            <field name="url_6" placeholder="https://example.com/img6.jpg"/>
+                            <field name="url_7" placeholder="https://example.com/img7.jpg"/>
+                        </group>
+                        <group>
+                            <field name="url_8" placeholder="https://example.com/img8.jpg"/>
+                            <field name="url_9" placeholder="https://example.com/img9.jpg"/>
+                            <field name="url_10" placeholder="https://example.com/img10.jpg"/>
+                            <field name="url_11" placeholder="https://example.com/img11.jpg"/>
+                            <field name="url_12" placeholder="https://example.com/img12.jpg"/>
+                            <field name="url_13" placeholder="https://example.com/img13.jpg"/>
+                            <field name="url_14" placeholder="https://example.com/img14.jpg"/>
+                        </group>
+                    </group>
+                    <div class="text-muted small mt-1">
+                        <i class="fa fa-info-circle"/>
+                        Fill one or more URLs. Supported: JPEG, PNG, GIF, WebP, BMP, TIFF · Max 5 MB each.
+                        Each URL is written to the product and fetched automatically.
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_fetch_all"
+                            string="Fetch All"
+                            type="object"
+                            class="btn-primary"
+                            data-hotkey="v"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"
+                            data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_image_url_wizard" model="ir.actions.act_window">
+        <field name="name">Add Images from URL</field>
+        <field name="res_model">product.image.url.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_product_tmpl_id': active_id}</field>
+    </record>
+
+</odoo>

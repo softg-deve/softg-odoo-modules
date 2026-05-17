@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Generate Image URLs — appears in the Action menu of product list -->
+    <record id="action_server_bulk_generate_urls" model="ir.actions.server">
+        <field name="name">Generate Image URLs</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+if records:
+    action = records.action_generate_image_urls_bulk()
+        </field>
+    </record>
+
+    <!-- Re-fetch from URLs — bulk inbound re-sync -->
+    <record id="action_server_bulk_resync_urls" model="ir.actions.server">
+        <field name="name">Re-fetch Images from URLs</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+if records:
+    action = records.action_sync_all_url_images_bulk()
+        </field>
+    </record>
+
+</odoo>

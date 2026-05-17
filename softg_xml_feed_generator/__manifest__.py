@@ -29,8 +29,9 @@ Pairs naturally with:
 - softg_product_image_publisher — populates image_url / extra_image_url_*
 - softg_product_public_url — populates public_url for <item_link>
 """,
-    'author': 'SoftG Ltd',
-    'website': 'https://softg.shop',
+    'author': 'Soft G Co. Ltd',
+    'website': 'https://www.softg.dev',
+    'support': 'support@softg.dev',
     'license': 'LGPL-3',
     'category': 'Website/Website',
     'depends': [

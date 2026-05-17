@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Presets are defined in code (models/feed.py SoftgFeedPresetWizard)
+         rather than as data records, so they remain inspectable/editable
+         in one place and migration-friendly. This file is intentionally
+         empty but referenced in __manifest__.py for future preset data. -->
+</odoo>

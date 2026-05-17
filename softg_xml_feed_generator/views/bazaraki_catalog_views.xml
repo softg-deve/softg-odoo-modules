@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ─── Rubric catalog list/search ─── -->
+    <record id="softg_bazaraki_rubric_list" model="ir.ui.view">
+        <field name="name">softg.bazaraki.rubric.list</field>
+        <field name="model">softg.bazaraki.rubric</field>
+        <field name="arch" type="xml">
+            <list string="Bazaraki Rubrics">
+                <field name="rubric_id"/>
+                <field name="top_category"/>
+                <field name="leaf_name"/>
+                <field name="full_path"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="softg_bazaraki_rubric_search" model="ir.ui.view">
+        <field name="name">softg.bazaraki.rubric.search</field>
+        <field name="model">softg.bazaraki.rubric</field>
+        <field name="arch" type="xml">
+            <search string="Rubrics">
+                <field name="rubric_id"/>
+                <field name="leaf_name"/>
+                <field name="full_path"/>
+                <field name="top_category"/>
+                <separator/>
+                <filter string="Group by Top Category" name="group_top"
+                        context="{'group_by': 'top_category'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_softg_bazaraki_rubric" model="ir.actions.act_window">
+        <field name="name">Bazaraki Rubric Catalog</field>
+        <field name="res_model">softg.bazaraki.rubric</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="softg_bazaraki_rubric_search"/>
+    </record>
+
+    <!-- ─── District catalog ─── -->
+    <record id="softg_bazaraki_district_list" model="ir.ui.view">
+        <field name="name">softg.bazaraki.district.list</field>
+        <field name="model">softg.bazaraki.district</field>
+        <field name="arch" type="xml">
+            <list string="Bazaraki Districts">
+                <field name="district_id"/>
+                <field name="region"/>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="softg_bazaraki_district_search" model="ir.ui.view">
+        <field name="name">softg.bazaraki.district.search</field>
+        <field name="model">softg.bazaraki.district</field>
+        <field name="arch" type="xml">
+            <search string="Districts">
+                <field name="district_id"/>
+                <field name="name"/>
+                <field name="region"/>
+                <separator/>
+                <filter string="Group by Region" name="group_region"
+                        context="{'group_by': 'region'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_softg_bazaraki_district" model="ir.actions.act_window">
+        <field name="name">Bazaraki District Catalog</field>
+        <field name="res_model">softg.bazaraki.district</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="softg_bazaraki_district_search"/>
+        <field name="context">{'search_default_group_region': 1}</field>
+    </record>
+
+    <!-- ─── Import wizard ─── -->
+    <record id="softg_bazaraki_import_wizard_form" model="ir.ui.view">
+        <field name="name">softg.bazaraki.import.wizard.form</field>
+        <field name="model">softg.bazaraki.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Bazaraki Catalog">
+                <field name="state" invisible="1"/>
+                <group invisible="state == 'done'">
+                    <div class="alert alert-info" colspan="2" role="alert">
+                        Paste the raw text from
+                        <a href="https://www.bazaraki.com/business-xml-guide/" target="_blank">
+                        bazaraki.com/business-xml-guide</a>. The wizard parses both the
+                        Categories (rubrics) and Locations (districts) sections automatically.
+                        <br/><br/>
+                        The module ships with a bundled catalog of IT/electronics rubrics + main
+                        Cyprus districts pre-loaded. Use this wizard to refresh or extend it
+                        with the full Bazaraki taxonomy (Animals, Real Estate, Motors, Jobs, etc.)
+                        if you sell beyond electronics.
+                    </div>
+                    <field name="purge_existing"/>
+                    <field name="raw_text" nolabel="1" colspan="2"
+                           placeholder="Paste Bazaraki XML guide text here..."
+                           widget="text" style="min-height: 400px;"/>
+                </group>
+                <group invisible="state != 'done'">
+                    <div class="alert alert-success" colspan="2" role="alert">
+                        <strong>Import complete.</strong>
+                    </div>
+                    <field name="rubric_count" readonly="1"/>
+                    <field name="district_count" readonly="1"/>
+                </group>
+                <footer>
+                    <button name="action_import" type="object" string="Import"
+                            class="btn-primary" invisible="state == 'done'"/>
+                    <button string="Close" class="btn-secondary" special="cancel"
+                            invisible="state != 'done'"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"
+                            invisible="state == 'done'"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_softg_bazaraki_import" model="ir.actions.act_window">
+        <field name="name">Import Bazaraki Catalog</field>
+        <field name="res_model">softg.bazaraki.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- ─── Action: Auto-Suggest Rubrics (server action on product.category) ─── -->
+    <record id="action_softg_auto_suggest_rubric" model="ir.actions.server">
+        <field name="name">Auto-Suggest Bazaraki Rubric</field>
+        <field name="model_id" ref="product.model_product_category"/>
+        <field name="binding_model_id" ref="product.model_product_category"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_auto_suggest_rubric()</field>
+    </record>
+
+</odoo>

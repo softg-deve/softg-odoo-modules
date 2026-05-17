@@ -1,0 +1,390 @@
+Computers, gaming / Desktop parts / CPU 3362
+Computers, gaming / Desktop parts / Cases 3360
+Computers, gaming / Desktop parts / Cooling 3361
+Computers, gaming / Desktop parts / Extentions 3363
+Computers, gaming / Desktop parts / GPU 3364
+Computers, gaming / Desktop parts / Motherboards 3365
+Computers, gaming / Desktop parts / Other 3370
+Computers, gaming / Desktop parts / PSU 3366
+Computers, gaming / Desktop parts / RAM 3367
+Computers, gaming / Desktop parts / SSD, HDD 3368
+Computers, gaming / Desktop parts / Sets 3369
+Computers, gaming / Desktops, servers 264
+Computers, gaming / Gaming / Consoles 3378
+Computers, gaming / Gaming / Games 3379
+Computers, gaming / Gaming / Other video games goods 2249
+Computers, gaming / Gaming / Video game accessories 199
+Computers, gaming / Laptop parts, tools 2787
+Computers, gaming / Laptops, notebooks 263
+Computers, gaming / Miners 3514
+Computers, gaming / Monitors 267
+Computers, gaming / Other 72
+Computers, gaming / PC, Laptop accessories / Cables, adaptors 3348
+Computers, gaming / PC, Laptop accessories / External hard drives 3349
+Computers, gaming / PC, Laptop accessories / Hubs 3350
+Computers, gaming / PC, Laptop accessories / Keyboards 3351
+Computers, gaming / PC, Laptop accessories / Laptop accessories 3352
+Computers, gaming / PC, Laptop accessories / Mouse pads 3353
+Computers, gaming / PC, Laptop accessories / Mouses 3354
+Computers, gaming / PC, Laptop accessories / Other 3359
+Computers, gaming / PC, Laptop accessories / Sets 3358
+Computers, gaming / PC, Laptop accessories / UPS 3355
+Computers, gaming / PC, Laptop accessories / USB sticks 3356
+Computers, gaming / PC, Laptop accessories / Webcams 3357
+Computers, gaming / Printers, scanners 265
+Computers, gaming / Routers, modems, switches / Modems 3371
+Computers, gaming / Routers, modems, switches / Other 3374
+Computers, gaming / Routers, modems, switches / Powerlines 3372
+Computers, gaming / Routers, modems, switches / Wifi repeaters 3373
+Computers, gaming / Software 71
+Computers, gaming / Tablets, accessories / Cases, screen protectors 3376
+Computers, gaming / Tablets, accessories / Other 3377
+Computers, gaming / Tablets, accessories / Tablets 3375
+Electronics, appliances / Air, cooling, heating / Air conditioning, cooling 85
+Electronics, appliances / Air, cooling, heating / Air quality 2951
+Electronics, appliances / Air, cooling, heating / Electric heaters 202
+Electronics, appliances / Air, cooling, heating / Fans 3270
+Electronics, appliances / Audio, stereo / Headphones, earphones 2133
+Electronics, appliances / Audio, stereo / Microphones 3269
+Electronics, appliances / Audio, stereo / Music players 73
+Electronics, appliances / Audio, stereo / Other 84
+Electronics, appliances / Audio, stereo / Walkie Talkie 200
+Electronics, appliances / Audio, stereo / Αmps, speakers 2135
+Electronics, appliances / Binoculars, telescopes 3272
+Electronics, appliances / Cameras, camcorders / Accessories 2143
+Electronics, appliances / Cameras, camcorders / Digital cameras 74
+Electronics, appliances / Cameras, camcorders / Drones 3515
+Electronics, appliances / Cameras, camcorders / Lenses 2141
+Electronics, appliances / Cameras, camcorders / Other cameras, items 2145
+Electronics, appliances / Cameras, camcorders / Polaroid cameras 2843
+Electronics, appliances / Cameras, camcorders / Video, camcorders 82
+Electronics, appliances / Cameras, camcorders / Vintage cameras 2842
+Electronics, appliances / DVD, TVs, videos / Accessories 2137
+Electronics, appliances / DVD, TVs, videos / Antennas, receivers, satellite dishes 79
+Electronics, appliances / DVD, TVs, videos / Blu-ray, DVD, video players 75
+Electronics, appliances / DVD, TVs, videos / Other 2139
+Electronics, appliances / DVD, TVs, videos / Projectors, accessories 3271
+Electronics, appliances / DVD, TVs, videos / TV's 81
+Electronics, appliances / DVD, TVs, videos / Tv box, sticks 3301
+Electronics, appliances / Energy / Alternative energy supplies 3267
+Electronics, appliances / Energy / Batteries, chargers 3268
+Electronics, appliances / Health, beauty appliances 2149
+Electronics, appliances / Home appliances / Cleaning appliances 93
+Electronics, appliances / Home appliances / Dryers 2700
+Electronics, appliances / Home appliances / Irons, ironing boards 2157
+Electronics, appliances / Home appliances / Other home appliances 2161
+Electronics, appliances / Home appliances / Security systems 320
+Electronics, appliances / Home appliances / Sewing machines 346
+Electronics, appliances / Home appliances / Washing machines 94
+Electronics, appliances / Kitchen appliances / Coffee makers 321
+Electronics, appliances / Kitchen appliances / Dishwashers 319
+Electronics, appliances / Kitchen appliances / Microwaves 88
+Electronics, appliances / Kitchen appliances / Ovens, cookers, hoods 89
+Electronics, appliances / Kitchen appliances / Refrigerators, freezers 91
+Electronics, appliances / Kitchen appliances / Small kitchen appliances 2153
+Electronics, appliances / Kitchen appliances / Water dispensers 95
+Electronics, appliances / Measuring instruments 2370
+Mobile phones, communication / Accessories / Bluetooth 3047
+Mobile phones, communication / Accessories / Cases, covers 3048
+Mobile phones, communication / Accessories / Chargers and cables 3049
+Mobile phones, communication / Accessories / Handsfree, headphones 3050
+Mobile phones, communication / Accessories / Memory cards 3051
+Mobile phones, communication / Accessories / Other 3057
+Mobile phones, communication / Accessories / Powerbanks 3052
+Mobile phones, communication / Accessories / Screen protectors 3054
+Mobile phones, communication / Accessories / Selfie sticks 3053
+Mobile phones, communication / Accessories / Stands, holders 3056
+Mobile phones, communication / Mobile phones / Alcatel 3290
+Mobile phones, communication / Mobile phones / Asus 3717
+Mobile phones, communication / Mobile phones / BlackBerry 273
+Mobile phones, communication / Mobile phones / Blackview 3288
+Mobile phones, communication / Mobile phones / Cat 2645
+Mobile phones, communication / Mobile phones / Cubot 3289
+Mobile phones, communication / Mobile phones / Doogee 3807
+Mobile phones, communication / Mobile phones / Fairphone 3724
+Mobile phones, communication / Mobile phones / Google 2668
+Mobile phones, communication / Mobile phones / HTC 276
+Mobile phones, communication / Mobile phones / Hammer 3809
+Mobile phones, communication / Mobile phones / Honor 3718
+Mobile phones, communication / Mobile phones / Huawei 2302
+Mobile phones, communication / Mobile phones / LG 277
+Mobile phones, communication / Mobile phones / Motorola 272
+Mobile phones, communication / Mobile phones / Nokia 269
+Mobile phones, communication / Mobile phones / Nothing Phone 3805
+Mobile phones, communication / Mobile phones / Oneplus 3274
+Mobile phones, communication / Mobile phones / Oppo 3287
+Mobile phones, communication / Mobile phones / Other 274
+Mobile phones, communication / Mobile phones / Oukitel 3810
+Mobile phones, communication / Mobile phones / Realme 3275
+Mobile phones, communication / Mobile phones / Samsung / Galaxy A Series 3456
+Mobile phones, communication / Mobile phones / Samsung / Galaxy M Series 3474
+Mobile phones, communication / Mobile phones / Samsung / Galaxy Note 10, 10 Plus 3458
+Mobile phones, communication / Mobile phones / Samsung / Galaxy Note 20, 20 Plus 3457
+Mobile phones, communication / Mobile phones / Samsung / Galaxy Note 8 3460
+Mobile phones, communication / Mobile phones / Samsung / Galaxy Note 9 3459
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 10, 10e, 10 Plus 3464
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 20, 20 Plus, 20 Ultra 3463
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 21, 21 Plus, 21 Ultra 3462
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 22, 22 Plus, 22 Ultra 3461
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 5 3469
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 6, 6 Edge 3468
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 7, 7 Edge 3467
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 8, 8 Plus 3466
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S 9, 9 Plus 3465
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S23, Galaxy S23 Plus, Galaxy S23 Ultra 3549
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S24, S24 Plus, S24 Ultra 3620
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S25, S25 Plus, S25 Ultra 3703
+Mobile phones, communication / Mobile phones / Samsung / Galaxy S26, S26 Plus, S26 Ultra 3804
+Mobile phones, communication / Mobile phones / Samsung / Galaxy Z Flip Series 3471
+Mobile phones, communication / Mobile phones / Samsung / Galaxy Z Fold Series 3472
+Mobile phones, communication / Mobile phones / Samsung / Other 3473
+Mobile phones, communication / Mobile phones / Samsung / Xcover 3470
+Mobile phones, communication / Mobile phones / Siemens 279
+Mobile phones, communication / Mobile phones / Sony 2417
+Mobile phones, communication / Mobile phones / Tcl 3720
+Mobile phones, communication / Mobile phones / Ulefone 3291
+Mobile phones, communication / Mobile phones / Umidigi 3723
+Mobile phones, communication / Mobile phones / Uniwa 3808
+Mobile phones, communication / Mobile phones / Vivo 3806
+Mobile phones, communication / Mobile phones / Volla 3721
+Mobile phones, communication / Mobile phones / Xiaomi 2300
+Mobile phones, communication / Mobile phones / Zte 3719
+Mobile phones, communication / Mobile phones / iPhone / IPhone 2 2331
+Mobile phones, communication / Mobile phones / iPhone / IPhone 3 3484
+Mobile phones, communication / Mobile phones / iPhone / iPhone 11 2873
+Mobile phones, communication / Mobile phones / iPhone / iPhone 11 Pro 2974
+Mobile phones, communication / Mobile phones / iPhone / iPhone 11 Pro Max 2975
+Mobile phones, communication / Mobile phones / iPhone / iPhone 12 3075
+Mobile phones, communication / Mobile phones / iPhone / iPhone 12 Pro 3077
+Mobile phones, communication / Mobile phones / iPhone / iPhone 12 Pro Max 3078
+Mobile phones, communication / Mobile phones / iPhone / iPhone 12 mini 3076
+Mobile phones, communication / Mobile phones / iPhone / iPhone 13 3344
+Mobile phones, communication / Mobile phones / iPhone / iPhone 13 Pro 3345
+Mobile phones, communication / Mobile phones / iPhone / iPhone 13 Pro Max 3346
+Mobile phones, communication / Mobile phones / iPhone / iPhone 13 mini 3343
+Mobile phones, communication / Mobile phones / iPhone / iPhone 14 3524
+Mobile phones, communication / Mobile phones / iPhone / iPhone 14 Plus 3539
+Mobile phones, communication / Mobile phones / iPhone / iPhone 14 Pro 3525
+Mobile phones, communication / Mobile phones / iPhone / iPhone 14 Pro Max 3526
+Mobile phones, communication / Mobile phones / iPhone / iPhone 15 3583
+Mobile phones, communication / Mobile phones / iPhone / iPhone 15 Plus 3584
+Mobile phones, communication / Mobile phones / iPhone / iPhone 15 Pro 3585
+Mobile phones, communication / Mobile phones / iPhone / iPhone 15 Pro Max 3586
+Mobile phones, communication / Mobile phones / iPhone / iPhone 16 3662
+Mobile phones, communication / Mobile phones / iPhone / iPhone 16 Plus 3663
+Mobile phones, communication / Mobile phones / iPhone / iPhone 16 Pro 3665
+Mobile phones, communication / Mobile phones / iPhone / iPhone 16 Pro Max 3667
+Mobile phones, communication / Mobile phones / iPhone / iPhone 16e 3713
+Mobile phones, communication / Mobile phones / iPhone / iPhone 17 3755
+Mobile phones, communication / Mobile phones / iPhone / iPhone 17 Pro 3757
+Mobile phones, communication / Mobile phones / iPhone / iPhone 17 Pro Max 3758
+Mobile phones, communication / Mobile phones / iPhone / iPhone 17e 3812
+Mobile phones, communication / Mobile phones / iPhone / iPhone 4 439
+Mobile phones, communication / Mobile phones / iPhone / iPhone 4S 3483
+Mobile phones, communication / Mobile phones / iPhone / iPhone 5 445
+Mobile phones, communication / Mobile phones / iPhone / iPhone 5C 3481
+Mobile phones, communication / Mobile phones / iPhone / iPhone 5S 3482
+Mobile phones, communication / Mobile phones / iPhone / iPhone 6 446
+Mobile phones, communication / Mobile phones / iPhone / iPhone 6 Plus 3479
+Mobile phones, communication / Mobile phones / iPhone / iPhone 6S 3478
+Mobile phones, communication / Mobile phones / iPhone / iPhone 6S Plus 3480
+Mobile phones, communication / Mobile phones / iPhone / iPhone 7 565
+Mobile phones, communication / Mobile phones / iPhone / iPhone 7 plus 3477
+Mobile phones, communication / Mobile phones / iPhone / iPhone 8 2419
+Mobile phones, communication / Mobile phones / iPhone / iPhone 8 plus 3476
+Mobile phones, communication / Mobile phones / iPhone / iPhone Air 3756
+Mobile phones, communication / Mobile phones / iPhone / iPhone SE 2306
+Mobile phones, communication / Mobile phones / iPhone / iPhone X 2420
+Mobile phones, communication / Mobile phones / iPhone / iPhone Xr 2709
+Mobile phones, communication / Mobile phones / iPhone / iPhone Xs 2708
+Mobile phones, communication / Mobile phones / iPhone / iPhone Xs Max 2710
+Mobile phones, communication / Phone parts, tools / Huawei 3276
+Mobile phones, communication / Phone parts, tools / Other 3280
+Mobile phones, communication / Phone parts, tools / Samsung 3278
+Mobile phones, communication / Phone parts, tools / Xiaomi 3279
+Mobile phones, communication / Phone parts, tools / iPhone / iPhone 17 3761
+Mobile phones, communication / Phone parts, tools / iPhone / iPhone 17 Pro 3760
+Mobile phones, communication / Phone parts, tools / iPhone / iPhone 17 Pro Max 3759
+Mobile phones, communication / Phone parts, tools / iPhone / iPhone Air 3762
+Mobile phones, communication / Phones, answering machines 2308
+Mobile phones, communication / Wearables, accessories / Accessories 3284
+Mobile phones, communication / Wearables, accessories / Activity trackers 3282
+Mobile phones, communication / Wearables, accessories / Smartwatches 3283
+Famagusta
+Districts
+5721 | Agia Napa
+5722 | Agia Thekla
+5720 | Agia Triada
+5717 | Avgorou
+5723 | Cape Greko
+5724 | Deryneia
+5719 | Frenaros
+5725 | Kapparis
+5753 | Kokkinogremos
+5754 | Konnos
+5718 | Liopetri
+5729 | Paralimni
+5726 | Pernera
+5755 | Famagusta - Profitis Elias
+5727 | Protaras
+5728 | Sotira
+5757 | Vrysoulles
+5837 | Dasaki Achnas
+Nicosia
+Districts
+5654 | Nicosia - Ag. Antonios
+5700 | Nicosia - Agios Andreas
+5822 | Nicosia - Agios Ioannis
+5813 | Nicosia - Ag Konst and Elenis
+5806 | Nicosia - Agios Savvas
+5807 | Nicosia - Chrysaliniotissa
+5704 | Nicosia - Kaimakli
+5701 | Nicosia - Lykabittos
+5804 | Nicosia - Faneromeni
+5803 | Nicosia - Omerie
+5812 | Nicosia - Panagia
+5702 | Palouriotissa
+5805 | Nicosia - Trypiotis
+5703 | Nicosia - Sopaz
+5323 | Agios Dometios - Agios Georgios
+5762 | Agios Dometios - Agios Pavlos
+5483 | Egkomi
+5707 | Egkomi - Makedonitissa
+5706 | Egkomi - Parissinos
+5095 | Aglantzia
+5368 | Geri
+5745 | GSP Area
+5047 | Lakatameia - Agios Nikolaos
+5740 | Lakatameia - Archangelos-Anthoupoli
+5795 | Lakatameia - Agios Mamas
+5796 | Lakatameia - Agia Paraskevi
+5242 | Latsia - Agios Georgios
+5798 | Latsia - Archangelos Michail
+5799 | Latsia - Agios Eleftherios
+5093 | Strovolos - Agios Vasileios
+5811 | Strovolos - Agios Dimitrios
+5708 | Strovolos - Acropolis
+5809 | Strovolos - Ap. Varnavas and Ag. Makar.
+5709 | Strovolos - Archangelos
+5710 | Strovolos - Dasoupolis
+5808 | Strovolos - Enthomar Kyprianos
+5763 | Strovolos - Stavros
+5764 | Strovolos - Chryseleousa
+5445 | Lakatameia - Synoikismos Anthoupolis
+5390 | Tseri
+5834 | Dali
+5395 | Dali - Panag Evangelistria
+5802 | Dali - Ag Konst and Elenis
+5583 | Kato Deftera
+5045 | Pano Deftera
+5595 | Kokkinotrimithia
+5394 | Palaiometocho
+5650 | Astromeritis
+Limassol
+Districts
+5738 | Limassol - Agios Antonios
+5049 | Limassol - Agia Triada
+5008 | Limassol - Agios Georgios
+5730 | Limassol - Agia Fyla
+5515 | Limassol - Agios Ioannis
+5793 | Limassol - Agia Napa
+5683 | Limassol - Agios Nektarios
+5684 | Limassol - Agios Nicolaos
+5794 | Limassol - Agios Spyridon
+5682 | Limassol - Agia Zoni
+5739 | Limassol - Apostolos Andreas
+5790 | Limassol - Arnaoutogeitonia
+5686 | Ekali
+5687 | Historical Center
+5688 | Limassol - Kapsalos
+5689 | Limassol - Katholiki
+5690 | Limassol Marina
+5792 | Limassol - Panag. Evangelistria
+5691 | Limassol - Linopetra
+5692 | Limassol - Mesa Geitonia
+5693 | Limassol - Neapolis
+5694 | Limassol - Omonia
+5695 | Limassol - Petrou Kai Pavlou
+5696 | Limassol - Tsirion
+5697 | Limassol - Tsiflikoudia
+5789 | Limassol - Tzami Tzentit
+5699 | Limassol - Zakaki
+5207 | Agios Athanasios
+5343 | Agios Konstantinos
+5459 | Germasogeia
+5737 | Germasogeia Tourist Area
+5317 | Potamos Germasogeias
+5385 | Mouttagiaka
+5647 | Mouttagiaka Tourist Area
+5004 | Pano Polemidia
+5476 | Kato Polemidia
+5685 | Polemidia - Anthoupoli
+5785 | Polemidia - Apostolos Varnavas
+5786 | Polemidia - Archangelos Michail
+5817 | Polemidia - Agios Nikolaos
+5788 | Polemidia - Pan. Evangelistria
+5784 | Polemidia - Makarios III
+5261 | Vikla
+5291 | Vouni
+5664 | Ypsonas
+Larnaca
+Districts
+5732 | Larnaka - Agioi Anargyroi I
+5815 | Larnaka - Agioi Anargyroi II
+5772 | Larnaka - Agios Nikolaos
+5771 | Larnaka - Arch Makarios III
+5776 | Larnaka - Chrysopolitissa
+5735 | Larnaka - Kamares
+5774 | Larnaka - Kokkines
+5770 | Larnaka - Skala
+5773 | Larnaka - Tsakilero
+5733 | Larnaka - Finikoudes
+5734 | Larnaka - Harbor
+5736 | Larnaka - Makenzy
+5545 | Larnaka - Sotiros
+5408 | Aradippou - Apostolos Loukas
+5768 | Aradippou - Agios Fanourios
+5338 | Athienou
+5530 | Dromolaxia
+5836 | Drosia
+5391 | Kiti
+5503 | Livadia Larnakas
+5369 | Meneou
+5106 | Ormideia
+5497 | Oroklini
+5417 | Oroklini Tourist Area
+5147 | Pyla
+5655 | Pyla Tourist Area
+5144 | Perivolia Larnakas
+5179 | Xylofagou
+5657 | Xylotymvou
+Paphos
+Districts
+5335 | Paphos - Agios Theodoros
+5766 | Paphos - Agios Pavlos
+5712 | Paphos - Anavargos
+5713 | Paphos - Kato Paphos
+5714 | Paphos - Moutallos
+5715 | Tombs Of the Kings
+5716 | Paphos - Universal
+5741 | Paphos - Vasiliko
+5336 | Acheleia
+5568 | Chlorakas
+5360 | Empa
+5588 | Geroskipou
+5079 | Koloni
+5743 | Geroskipou - Neapolis
+5742 | Geroskipou Tourist Area
+5012 | Kissonerga
+5030 | Konia
+5325 | Lempa
+5246 | Mesa Chorio
+5334 | Mesogi
+5199 | Mandria Pafou
+5500 | Neo Chorio Pafou
+5372 | Pegeia
+5661 | Polis Chrysochous
+5424 | Tremithousa
+5081 | Tsada
+5154 | Tala
+5744 | Latsi

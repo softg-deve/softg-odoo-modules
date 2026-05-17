@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top-level "SoftG Feeds" menu -->
+    <menuitem id="menu_softg_feed_root"
+              name="SoftG Feeds"
+              sequence="92"/>
+
+    <menuitem id="menu_softg_feed_main"
+              name="XML Feeds"
+              parent="menu_softg_feed_root"
+              action="action_softg_feed"
+              sequence="10"/>
+
+    <menuitem id="menu_softg_feed_mappings"
+              name="All Field Mappings"
+              parent="menu_softg_feed_root"
+              action="action_softg_feed_mapping"
+              sequence="20"/>
+
+    <menuitem id="menu_softg_bazaraki_section"
+              name="Bazaraki"
+              parent="menu_softg_feed_root"
+              sequence="30"/>
+
+    <menuitem id="menu_softg_bazaraki_rubric_mapping"
+              name="Rubric Mapping"
+              parent="menu_softg_bazaraki_section"
+              action="action_softg_bazaraki_rubric_mapping"
+              sequence="10"/>
+
+    <menuitem id="menu_softg_bazaraki_rubric_catalog"
+              name="Rubric Catalog"
+              parent="menu_softg_bazaraki_section"
+              action="action_softg_bazaraki_rubric"
+              sequence="20"/>
+
+    <menuitem id="menu_softg_bazaraki_district_catalog"
+              name="District Catalog"
+              parent="menu_softg_bazaraki_section"
+              action="action_softg_bazaraki_district"
+              sequence="30"/>
+
+    <menuitem id="menu_softg_bazaraki_import"
+              name="Import Catalog"
+              parent="menu_softg_bazaraki_section"
+              action="action_softg_bazaraki_import"
+              sequence="40"/>
+
+</odoo>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Feed list view -->
+    <record id="softg_feed_list_view" model="ir.ui.view">
+        <field name="name">softg.feed.list</field>
+        <field name="model">softg.feed</field>
+        <field name="arch" type="xml">
+            <list string="XML Feeds">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="live_url" widget="url"/>
+                <field name="mapping_count"/>
+                <field name="last_product_count"/>
+                <field name="last_generated"/>
+                <field name="cache_minutes"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Feed form view -->
+    <record id="softg_feed_form_view" model="ir.ui.view">
+        <field name="name">softg.feed.form</field>
+        <field name="model">softg.feed</field>
+        <field name="arch" type="xml">
+            <form string="XML Feed">
+                <header>
+                    <button name="action_generate" type="object"
+                            string="Generate Now" class="btn-primary"/>
+                    <button name="action_preview" type="object"
+                            string="Preview First 3"/>
+                    <button name="action_open_live_url" type="object"
+                            string="Open Live URL"/>
+                    <button name="action_load_preset" type="object"
+                            string="Load Preset"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Bazaraki Cyprus"/></h1>
+                    </div>
+                    <group>
+                        <group string="Identity">
+                            <field name="code" placeholder="e.g. bazaraki"/>
+                            <field name="live_url" widget="url"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group string="Caching">
+                            <field name="cache_minutes"/>
+                            <field name="last_generated"/>
+                            <field name="last_product_count"/>
+                            <field name="last_size_bytes"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Field Mappings" name="mappings">
+                            <field name="mapping_ids" nolabel="1">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="xml_tag"/>
+                                    <field name="source_type"/>
+                                    <field name="field_path" optional="show"/>
+                                    <field name="static_value" optional="show"/>
+                                    <field name="template" optional="hide"/>
+                                    <field name="transform" optional="hide"/>
+                                    <field name="wrap_cdata" widget="boolean_toggle" optional="show"/>
+                                    <field name="omit_if_empty" widget="boolean_toggle" optional="hide"/>
+                                </list>
+                            </field>
+                            <div class="alert alert-info" role="alert" style="margin-top: 12px;">
+                                <strong>Field Path</strong> supports dotted traversal: <code>name</code>,
+                                <code>list_price</code>, <code>categ_id.name</code>, <code>image_url</code>,
+                                <code>public_url</code>.<br/>
+                                <strong>Template</strong> uses <code>{placeholders}</code> resolved against
+                                product fields, e.g. <code>https://shop.com/p/{product_slug}</code>.<br/>
+                                <strong>Image Collection</strong> emits one child element per non-empty
+                                image URL (image_url + extra_image_url_1..14).<br/>
+                                <em>Tip: use the column-picker gear in the top-right of the list to show/hide columns.</em>
+                            </div>
+                        </page>
+                        <page string="XML Structure" name="structure">
+                            <group>
+                                <group string="Root">
+                                    <field name="xml_declaration"/>
+                                    <field name="root_tag"/>
+                                    <field name="root_attributes"
+                                           placeholder='version="2.0" xmlns:g="http://base.google.com/ns/1.0"'/>
+                                </group>
+                                <group string="Item">
+                                    <field name="item_tag"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Product Scope" name="scope">
+                            <group>
+                                <field name="product_filter_domain"
+                                       placeholder="[('is_published', '=', True)]"/>
+                                <field name="product_limit"/>
+                            </group>
+                            <div class="alert alert-info" role="alert">
+                                Standard Odoo domain syntax. Defaults to all published, saleable products.
+                                Example: <code>[('is_published', '=', True), ('list_price', '&gt;', 0)]</code>
+                            </div>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="description" nolabel="1"
+                                   placeholder="Internal notes — purpose of this feed, who consumes it, etc."/>
+                            <field name="last_error" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Feed search view -->
+    <record id="softg_feed_search_view" model="ir.ui.view">
+        <field name="name">softg.feed.search</field>
+        <field name="model">softg.feed</field>
+        <field name="arch" type="xml">
+            <search string="XML Feeds">
+                <field name="name"/>
+                <field name="code"/>
+                <separator/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_softg_feed" model="ir.actions.act_window">
+        <field name="name">XML Feeds</field>
+        <field name="res_model">softg.feed</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first XML feed.</p>
+            <p>
+                Build XML product feeds for marketplaces like Bazaraki, Google Shopping,
+                or Facebook Catalog. Use the "Load Preset" button on a new feed to
+                start from a marketplace template, or build your mapping from scratch.
+            </p>
+        </field>
+    </record>
+
+    <!-- Preview wizard view -->
+    <record id="softg_feed_preview_form" model="ir.ui.view">
+        <field name="name">softg.feed.preview.form</field>
+        <field name="model">softg.feed.preview</field>
+        <field name="arch" type="xml">
+            <form string="Feed Preview">
+                <field name="feed_id" invisible="1"/>
+                <div class="alert alert-info" role="alert">
+                    Preview of the first 3 products in this feed.
+                    Use this to validate your mapping before generating the full feed.
+                </div>
+                <field name="xml_content" widget="ace" options="{'mode': 'xml'}" readonly="1"/>
+                <footer>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Preset wizard view -->
+    <record id="softg_feed_preset_wizard_form" model="ir.ui.view">
+        <field name="name">softg.feed.preset.wizard.form</field>
+        <field name="model">softg.feed.preset.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Load Preset">
+                <field name="feed_id" invisible="1"/>
+                <group>
+                    <field name="preset"/>
+                    <field name="replace_existing"/>
+                </group>
+                <div class="alert alert-warning" role="alert">
+                    Loading a preset overwrites the feed's XML structure (root tag, item tag,
+                    root attributes, product filter) with the marketplace defaults. You can
+                    still edit any field afterwards.
+                </div>
+                <footer>
+                    <button name="action_load" string="Load Preset" type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

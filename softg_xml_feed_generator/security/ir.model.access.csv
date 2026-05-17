@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_softg_feed_user,softg.feed user,model_softg_feed,base.group_user,1,0,0,0
+access_softg_feed_manager,softg.feed manager,model_softg_feed,base.group_system,1,1,1,1
+access_softg_feed_mapping_user,softg.feed.mapping user,model_softg_feed_mapping,base.group_user,1,0,0,0
+access_softg_feed_mapping_manager,softg.feed.mapping manager,model_softg_feed_mapping,base.group_system,1,1,1,1
+access_softg_feed_preview,softg.feed.preview,model_softg_feed_preview,base.group_user,1,1,1,1
+access_softg_feed_preset_wizard,softg.feed.preset.wizard,model_softg_feed_preset_wizard,base.group_system,1,1,1,1
+access_softg_bazaraki_rubric_user,softg.bazaraki.rubric user,model_softg_bazaraki_rubric,base.group_user,1,0,0,0
+access_softg_bazaraki_rubric_manager,softg.bazaraki.rubric manager,model_softg_bazaraki_rubric,base.group_system,1,1,1,1
+access_softg_bazaraki_district_user,softg.bazaraki.district user,model_softg_bazaraki_district,base.group_user,1,0,0,0
+access_softg_bazaraki_district_manager,softg.bazaraki.district manager,model_softg_bazaraki_district,base.group_system,1,1,1,1
+access_softg_bazaraki_import_wizard,softg.bazaraki.import.wizard,model_softg_bazaraki_import_wizard,base.group_system,1,1,1,1

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Product form — add "Marketplace Feed" tab -->
+    <record id="softg_product_template_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.softg_xml_feed_generator</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Marketplace Feed" name="marketplace_feed">
+                    <group>
+                        <group string="Condition &amp; Specs">
+                            <field name="feed_condition"/>
+                            <field name="feed_warranty_months"/>
+                            <field name="feed_year"/>
+                            <field name="feed_delivery_available"/>
+                        </group>
+                        <group string="Identification">
+                            <field name="feed_brand"
+                                   placeholder="e.g., Dell, HP, Lenovo (falls back to category)"/>
+                            <field name="feed_model_override"
+                                   placeholder="Optional clean model code (defaults to product name)"/>
+                        </group>
+                    </group>
+                    <div class="alert alert-info" role="alert">
+                        These fields populate XML marketplace feeds (Bazaraki, Google Shopping,
+                        Facebook). They are NOT shown on your storefront — purely for syndicated feeds.
+                        The Bazaraki preset reads <code>feed_condition</code>, <code>feed_brand</code>,
+                        <code>feed_warranty_months</code>, and <code>feed_delivery_available</code> directly.
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Bulk edit list view: feed fields visible inline on the product list -->
+    <record id="softg_product_template_list_inherit" model="ir.ui.view">
+        <field name="name">product.template.list.softg_xml_feed_generator</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="after">
+                <field name="feed_condition" optional="hide"/>
+                <field name="feed_brand" optional="hide"/>
+                <field name="feed_warranty_months" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

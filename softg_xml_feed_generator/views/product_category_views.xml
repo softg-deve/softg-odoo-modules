@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Category form — add Bazaraki rubric fields -->
+    <record id="softg_product_category_form_inherit" model="ir.ui.view">
+        <field name="name">product.category.form.softg_xml_feed_generator</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="inside">
+                <group string="Marketplace Feeds">
+                    <field name="bazaraki_rubric_id"
+                           placeholder="e.g., 263 for Laptops"/>
+                    <field name="bazaraki_rubric_name"
+                           placeholder="e.g., Computers, gaming / Laptops, notebooks"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Bulk-edit list view — one row per Odoo category with rubric_id editable inline -->
+    <record id="softg_bazaraki_rubric_mapping_list" model="ir.ui.view">
+        <field name="name">product.category.list.bazaraki_rubric_mapping</field>
+        <field name="model">product.category</field>
+        <field name="arch" type="xml">
+            <list string="Bazaraki Rubric Mapping" editable="bottom">
+                <field name="complete_name" string="Odoo Category"/>
+                <field name="bazaraki_rubric_id" string="Bazaraki Rubric ID"/>
+                <field name="bazaraki_rubric_name" string="Bazaraki Path (for reference)"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="softg_bazaraki_rubric_mapping_search" model="ir.ui.view">
+        <field name="name">product.category.search.bazaraki_rubric_mapping</field>
+        <field name="model">product.category</field>
+        <field name="arch" type="xml">
+            <search string="Bazaraki Rubric Mapping">
+                <field name="complete_name"/>
+                <field name="bazaraki_rubric_id"/>
+                <separator/>
+                <filter string="Missing Rubric" name="missing_rubric"
+                        domain="[('bazaraki_rubric_id', '=', False)]"/>
+                <filter string="Has Rubric" name="has_rubric"
+                        domain="[('bazaraki_rubric_id', '!=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_softg_bazaraki_rubric_mapping" model="ir.actions.act_window">
+        <field name="name">Bazaraki Rubric Mapping</field>
+        <field name="res_model">product.category</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="softg_bazaraki_rubric_mapping_list"/>
+        <field name="search_view_id" ref="softg_bazaraki_rubric_mapping_search"/>
+        <field name="context">{'search_default_missing_rubric': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Map your Odoo categories to Bazaraki rubrics.</p>
+            <p>
+                Each Odoo product category needs a Bazaraki rubric ID so the XML feed knows
+                which Bazaraki category to file each product under. Look up the correct rubric
+                for each category at <a href="https://www.bazaraki.com/business-xml-guide/" target="_blank">
+                bazaraki.com/business-xml-guide</a>.
+            </p>
+            <p>
+                Common IT rubrics: <code>263</code> = Laptops, <code>264</code> = Desktops,
+                <code>267</code> = Monitors, <code>265</code> = Printers/scanners,
+                <code>3354</code> = Mouses, <code>3351</code> = Keyboards.
+            </p>
+        </field>
+    </record>
+
+</odoo>

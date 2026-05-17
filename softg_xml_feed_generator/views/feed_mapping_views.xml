@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Standalone mapping list view — useful for cross-feed audit -->
+    <record id="softg_feed_mapping_list_view" model="ir.ui.view">
+        <field name="name">softg.feed.mapping.list</field>
+        <field name="model">softg.feed.mapping</field>
+        <field name="arch" type="xml">
+            <list string="Field Mappings" editable="bottom">
+                <field name="feed_id"/>
+                <field name="sequence" widget="handle"/>
+                <field name="xml_tag"/>
+                <field name="source_type"/>
+                <field name="field_path"/>
+                <field name="static_value"/>
+                <field name="template"/>
+                <field name="transform"/>
+                <field name="wrap_cdata" widget="boolean_toggle"/>
+                <field name="omit_if_empty" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="softg_feed_mapping_search_view" model="ir.ui.view">
+        <field name="name">softg.feed.mapping.search</field>
+        <field name="model">softg.feed.mapping</field>
+        <field name="arch" type="xml">
+            <search string="Field Mappings">
+                <field name="xml_tag"/>
+                <field name="feed_id"/>
+                <field name="field_path"/>
+                <separator/>
+                <filter string="Group by Feed" name="group_feed"
+                        context="{'group_by': 'feed_id'}"/>
+                <filter string="Group by Source Type" name="group_source"
+                        context="{'group_by': 'source_type'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_softg_feed_mapping" model="ir.actions.act_window">
+        <field name="name">All Field Mappings</field>
+        <field name="res_model">softg.feed.mapping</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'search_default_group_feed': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No mappings yet.</p>
+            <p>Field mappings define which Odoo product fields produce which XML elements.
+            They live inside each feed; this view shows mappings across all feeds for auditing.</p>
+        </field>
+    </record>
+
+</odoo>

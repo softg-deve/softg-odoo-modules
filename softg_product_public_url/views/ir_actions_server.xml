@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_server_bulk_regenerate_public_urls" model="ir.actions.server">
+        <field name="name">Regenerate Public URLs</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+if records:
+    action = records.action_regenerate_public_url()
+        </field>
+    </record>
+
+</odoo>

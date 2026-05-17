@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_product_template_form_public_url" model="ir.ui.view">
+        <field name="name">product.template.form.public.url</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="priority">110</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Public URL" name="public_url">
+                    <group>
+                        <group string="Slug &amp; URL">
+                            <field name="product_slug"
+                                   placeholder="auto-generated from name"/>
+                            <field name="public_url" widget="url"
+                                   readonly="1"/>
+                        </group>
+                        <group string="Actions">
+                            <div class="d-flex flex-column gap-2">
+                                <button type="object"
+                                        name="action_regenerate_public_url"
+                                        string="Regenerate Public URL"
+                                        icon="fa-refresh"
+                                        class="btn btn-primary btn-sm"
+                                        help="Recompute the slug from the current product name and refresh the public URL. If the slug changes, a 301 redirect is automatically created from the old URL to the new one."/>
+                            </div>
+                        </group>
+                    </group>
+                    <div class="text-muted small mt-2">
+                        <i class="fa fa-info-circle"/>
+                        The slug auto-updates whenever the product name or SKU changes.
+                        Renaming triggers an automatic 301 redirect from the old URL
+                        to the new one — old bookmarks and search-engine links
+                        keep working. The public URL is the absolute storefront URL
+                        composed from <code>web.base.url</code> plus
+                        <code>/shop/&lt;slug&gt;</code>. Long product names are
+                        truncated at the last hyphen boundary at the limit
+                        configured in System Parameter
+                        <code>softg.public_url.max_slug_length</code>
+                        (default 80; set to 0 to disable truncation).
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

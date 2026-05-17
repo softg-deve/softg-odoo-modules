@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- noupdate="1" so subsequent module upgrades don't overwrite
+             values the admin has customised. -->
+
+        <record id="param_public_url_max_slug_length" model="ir.config_parameter">
+            <field name="key">softg.public_url.max_slug_length</field>
+            <field name="value">80</field>
+        </record>
+
+    </data>
+</odoo>

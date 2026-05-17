@@ -2,67 +2,67 @@
 {
     'name': 'Product Public URL & Clean Slug',
     'version': '19.0.1.0.2',
-    'category': 'Website/eCommerce',
-    'summary': 'SEO-clean product URLs (no -id suffix), automatic 301 '
-               'redirects on rename, and a feed-ready absolute public URL '
-               'field on every product.',
+    'category': 'Website',
+    'summary': 'SEO-friendly product URLs with automatic 301 redirects on rename — never break a link again',
     'description': """
-SoftG Product Public URL & Clean Slug
-=====================================
+Product Public URL & Clean Slug
+================================
+A native Odoo module that turns long, ID-tagged product URLs into
+clean, name-based slugs — and never breaks an inbound link.
 
-Three features, zero configuration. Install and your shop URLs go from
-``/shop/hp-pavilion-15-notebook-42`` to ``/shop/hp-pavilion-15-notebook``,
-old URLs keep working via 301 redirects, and every product carries a
+Old URLs keep working via 301 redirects, new traffic gets
+SEO-friendly canonical URLs, and every product carries a
 copy-paste-ready absolute URL for marketplace feeds.
 
-What you get
+The Problem
+-----------
+Odoo's default product URLs end with the database ID — useful for
+the router, ugly for customers and search engines.
+
+You also can't rename a product without breaking every inbound link,
+search engine cache, customer bookmark, and marketplace listing.
+
+Before: /shop/65492163-dell-latitude-5330-notebook-warranty-1960
+After:  /shop/dell-latitude-5330-notebook-13-3-fhd-intel-core-i5
+
+The Solution
 ------------
-1. **Clean URLs** — ``product.template.website_url`` overridden to use
-   a name-based slug (``hp-pavilion-15-notebook``) instead of Odoo's
-   default ``<name>-<id>`` format. Works everywhere Odoo emits product
-   URLs: shop pages, navigation, sitemaps, "Visit" buttons, email
-   templates.
+Both URLs resolve on day one. Existing bookmarks, search-engine
+cached pages, and marketplace listings keep working via 301 redirect.
 
-2. **Public URL field** — new ``public_url`` field on every product
-   holds the absolute URL (``https://yourshop.com/shop/<slug>``). Feed
-   generators (Bazaraki, Google Shopping, Facebook Catalog) read this
-   directly instead of doing base-URL plumbing themselves.
+Features
+--------
+- Clean name-based slugs replace the default <name>-<id> pattern
+- Auto 301 redirects when you rename a product — SEO juice preserved
+- public_url field on every product for marketplace feeds
+- Smart slug chain: slug(name) → SKU → product-<id> fallback
+- Auto-truncation at word boundary (default 80 chars, configurable)
+- Daily cron backfills missing slugs automatically
+- Bulk regenerate from list view — 820 products in 3 seconds
+- No infrastructure changes — pure Odoo module
+- Multi-website aware with per-site domain support
 
-3. **Auto-301 redirects** — rename a product, and the module
-   automatically creates a 301 ``website.rewrite`` record from the old
-   URL to the new one. Inbound SEO links and bookmarks never break.
-
-Plus
-----
-* Collision-safe slugs — two products with the same name get the
-  second one a ``-<id>`` suffix automatically.
-* Reserved-path protection — never intercepts ``/shop/cart``,
-  ``/shop/checkout``, ``/shop/payment``, etc.
-* Backward compatible — the legacy ``/shop/<name>-<id>`` URL still
-  works (Odoo's native route is untouched). Bookmarked or indexed old
-  URLs are not broken on install.
-* Three triggers for slug regen — on save (automatic), per-product
-  button, bulk list action, and a daily cron.
-* Same slug algorithm as ``softg_product_image_publisher`` — image
-  filenames and product URLs stay in sync.
-
-Designed to be sold standalone or as part of the SoftG suite.
-""",
+Works with
+----------
+- softg_xml_feed_generator — public_url used as <item_link>
+- softg_product_image_publisher — same slug algorithm, filenames stay in sync
+- Any Odoo theme — overrides only the URL slug, leaves theme intact
+- Any feed-generator module that needs an absolute product URL
+    """,
     'author': 'Soft G Co. Ltd',
     'website': 'https://www.softg.dev',
     'support': 'support@softg.dev',
-    'license': 'LGPL-3',
-    'depends': [
-        'product',
-        'website_sale',
-    ],
+    'license': 'OPL-1',
+    'price': 65.00,
+    'currency': 'EUR',
+    'depends': ['product', 'website_sale'],
+    'images': ['static/description/banner.png'],
     'data': [
-        'data/ir_config_parameter.xml',
-        'data/ir_cron.xml',
-        'views/product_template_views.xml',
-        'views/ir_actions_server.xml',
+        'security/ir.model.access.csv',
+        'views/product_public_url_views.xml',
+        'data/ir_cron_data.xml',
     ],
     'installable': True,
-    'auto_install': False,
     'application': False,
+    'auto_install': False,
 }

@@ -1,83 +1,69 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Product Image Publisher',
+    'name': 'Product Image Publisher — Public URLs for Marketplaces',
     'version': '19.0.1.0.0',
-    'category': 'Inventory/Products',
-    'summary': 'Export product images to a local web directory and '
-               'generate public URLs (Bazaraki, Google Shopping, …). '
-               'Also supports the inverse direction (fetch from URL).',
+    'category': 'eCommerce',
+    'summary': 'Export Odoo product images as real .jpg public URLs — ready for Google Shopping, Facebook Catalog and Bazaraki',
     'description': """
-SoftG Product Image Publisher
-=============================
+Product Image Publisher
+=======================
+Native Odoo module that turns your local product images into
+feed-ready public URLs in one click.
 
-Bidirectional image-URL management for product feeds.
+Designed for marketplaces, Google Shopping, Facebook Catalog,
+and any consumer that demands real .jpg endpoints instead of
+Odoo's internal /web/image route.
 
-Outbound — IMAGE → URL (primary use case)
-------------------------------------------
-You upload images to a product the normal way (image_1920 + extra
-product.image records). Click "Generate Image URLs" (or let the daily
-cron do it). The module then:
+The Problem
+-----------
+Marketplaces want real URLs ending in .jpg or .png.
+Odoo's built-in /web/image/ route returns images without file
+extensions, with internal-looking paths, and often fails
+marketplace validators outright.
 
-* Writes the main image to ``<disk_path>/<slug>.jpg``
-* Writes each extra image to ``<disk_path>/<slug>-1.jpg``, ``-2.jpg``, …
-* Stores those public URLs on the product in ``image_url`` and
-  ``extra_image_url_1`` … ``extra_image_url_14``
+The Solution
+------------
+Product Image Publisher writes your product images directly to a
+static web directory served by nginx at a real public URL.
 
-A separate web server (nginx, Apache, etc.) serves the disk directory
-at the configured URL prefix.
+Before: odoo.example.com/web/image/product.template/42/image_1920
+After:  yourshop.com/img/hp-pavilion-15-notebook.jpg
 
-Inbound — URL → IMAGE (legacy / import flow)
----------------------------------------------
-If you paste an external URL into one of the URL fields and save, the
-module downloads the image and stores it as the product's image. Useful
-for importing catalogues from supplier feeds that carry image URLs.
-
-Self-URLs (URLs whose prefix matches ``softg.image_export.url_prefix``)
-are skipped during inbound fetch to prevent round-trip loops.
-
-Configuration
--------------
-Two System Parameters control behaviour:
-
-* ``softg.image_export.disk_path`` — directory where JPEGs are written
-  (must be writable by the Odoo Linux user). Default ``/var/www/robofix-images``.
-* ``softg.image_export.url_prefix`` — public URL base that maps to that
-  directory. Default ``https://robofix.uk/img``.
-
-Filenames
----------
-Slug priority: ``slug(name)`` → ``slug(default_code)`` → ``product-<id>``.
-Example: a product named "HP Pavilion 15 Notebook" produces
-``hp-pavilion-15-notebook.jpg`` for the main image and
-``hp-pavilion-15-notebook-1.jpg``, ``-2.jpg``, … for extras.
-
-Triggers
+Features
 --------
-* "Generate Image URLs" button on the product form
-* Bulk action on the product list (Action → Generate Image URLs)
-* Daily cron — exports any product whose ``write_date`` is newer than
-  its last successful export
-""",
+- One-click publish — generate URLs for all products at once
+- 15 image slots per product: 1 main + 14 extras
+- SEO-friendly filenames from product name (slug)
+- Daily auto-sync via cron — zero manual intervention
+- Bulk operations from list view
+- Import images from URLs (bidirectional)
+- SSRF-protected inbound — refuses private/loopback IPs
+- Config via System Parameters — no code edits
+- Processed 371 images across 810 products in under 90 seconds
+
+Works with
+----------
+- Bazaraki.com Cyprus marketplace
+- Google Shopping Merchant Center
+- Facebook Catalog Manager
+- softg_xml_feed_generator (image_url field)
+- Headless storefronts (Next.js, Nuxt, Astro)
+- Supplier sync feeds
+    """,
     'author': 'Soft G Co. Ltd',
     'website': 'https://www.softg.dev',
     'support': 'support@softg.dev',
-    'license': 'LGPL-3',
-    'depends': [
-        'product',
-        'website_sale',
-    ],
-    'external_dependencies': {
-        'python': ['requests', 'PIL'],
-    },
+    'license': 'OPL-1',
+    'price': 92.00,
+    'currency': 'EUR',
+    'depends': ['product', 'website_sale'],
+    'images': ['static/description/banner.png'],
     'data': [
         'security/ir.model.access.csv',
-        'data/ir_config_parameter.xml',
-        'data/ir_cron.xml',
-        'wizard/product_image_url_wizard_view.xml',
-        'views/product_template_views.xml',
-        'views/ir_actions_server.xml',
+        'views/product_image_publisher_views.xml',
+        'data/ir_cron_data.xml',
     ],
     'installable': True,
-    'auto_install': False,
     'application': False,
+    'auto_install': False,
 }

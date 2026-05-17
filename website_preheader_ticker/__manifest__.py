@@ -22,7 +22,7 @@ Features
 - Works with any Odoo 19 theme — no theme dependency
 - Default welcome messages on fresh install
     """,
-    'author': 'SoftG',
+    'author': 'Soft G Co. Ltd',
     'website': 'https://www.softg.dev',
     'support': 'support@softg.dev',
     'license': 'OPL-1',

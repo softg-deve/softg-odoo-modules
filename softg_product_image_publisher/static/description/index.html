@@ -1,5 +1,168 @@
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <img src="index.png" style="width:100%;display:block;"/>
+    <div class="oe_span12" style="text-align:center;padding:20px 0 10px;">
+      <p style="color:#E8521A;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;">SoftG Official Module · v19.0.1.0.0</p>
+      <h2 class="oe_slogan" style="font-size:42px;font-weight:900;color:#0A0A08;">Product Image Publisher</h2>
+      <h3 class="oe_slogan" style="font-size:18px;color:#636e72;">Export your Odoo product images as real .jpg public URLs - ready for Google Shopping, Facebook Catalog and Bazaraki.</h3>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span4" style="text-align:center;padding:24px 10px;">
+      <div style="font-size:42px;font-weight:900;color:#E8521A;">15</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#636e72;margin-top:6px;">Image slots per product</div>
+    </div>
+    <div class="oe_span4" style="text-align:center;padding:24px 10px;">
+      <div style="font-size:42px;font-weight:900;color:#E8521A;">371</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#636e72;margin-top:6px;">Images in 90 seconds</div>
+    </div>
+    <div class="oe_span4" style="text-align:center;padding:24px 10px;">
+      <div style="font-size:42px;font-weight:900;color:#E8521A;">1-click</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#636e72;margin-top:6px;">To publish all</div>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span6">
+      <h2 style="font-size:28px;font-weight:900;color:#0A0A08;margin-bottom:16px;">The problem</h2>
+      <p style="font-size:14px;line-height:1.8;color:#636e72;">Marketplaces and shopping feeds want real, cache-friendly URLs that end in .jpg or .png. Odoo's built-in /web/image/ route returns images without file extensions, with internal-looking paths, and often fails marketplace validators outright.</p>
+      <p style="font-size:14px;line-height:1.8;color:#636e72;margin-top:12px;">Worse, many feed consumers only re-fetch images when the URL string itself changes. With Odoo's native URLs, your image updates never propagate downstream.</p>
+    </div>
+    <div class="oe_span6">
+      <div style="background:#fff5f5;border-left:4px solid #e17055;padding:20px 24px;margin-bottom:16px;border-radius:4px;">
+        <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e17055;font-weight:700;margin-bottom:10px;">Before - Odoo native</p>
+        <p style="font-size:12px;color:#c0392b;font-family:monospace;word-break:break-all;line-height:1.6;">odoo.example.com/web/image/product.template/42/image_1920</p>
+        <p style="font-size:12px;color:#636e72;margin-top:10px;">· No file extension &nbsp;· Internal ID exposed<br/>· Fails marketplace validators &nbsp;· Hits Python every request</p>
+      </div>
+      <div style="background:#f0fff8;border-left:4px solid #00B894;padding:20px 24px;border-radius:4px;">
+        <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#00B894;font-weight:700;margin-bottom:10px;">After - Image Publisher</p>
+        <p style="font-size:12px;color:#00B894;font-family:monospace;word-break:break-all;line-height:1.6;">yourshop.com/img/hp-pavilion-15-notebook.jpg</p>
+        <p style="font-size:12px;color:#636e72;margin-top:10px;">· Real .jpg endpoint &nbsp;· SEO-friendly name<br/>· Passes all validators &nbsp;· Nginx speed - no Python</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="font-size:28px;font-weight:900;color:#0A0A08;text-align:center;margin-bottom:32px;">What you get</h2>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">⊕ One-click publish all</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Generate public URLs for every product image from a single button or scheduled job. Works on Odoo 19 Community and Enterprise.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">▤ 15 image slots per product</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">1 main image + 14 extra slots. Matches Bazaraki, Google Shopping, and Facebook Catalog limits exactly. Each slot gets its own public URL.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">✦ SEO-friendly filenames</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Filenames generated from product name (slug), fallback to SKU, fallback to ID. Human-readable, linkable, shareable - and stable.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">⌚ Daily auto-sync cron</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Detects products whose images changed and re-exports automatically. Zero manual intervention after initial setup.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">↹ Bulk operations</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Select N products from list view → Action → Generate Image URLs. 371 images across 810 products in under 90 seconds.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">⛨ SSRF-protected inbound</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">When importing images from URLs, refuses to fetch addresses pointing at private or loopback IPs. Safe by default.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">⇆ Bidirectional</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Export images to public URLs or import images from URLs - both directions ship in the box.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">⚙ Config in UI</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Change disk path and URL prefix via System Parameters. No code edits needed. nginx setup guide included.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0A0A08;margin-bottom:8px;">◉ Works with any feed</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Pairs with softg_xml_feed_generator - image_url and extra_image_url_1..14 fields used directly as feed image sources.</p>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="font-size:28px;font-weight:900;color:#0A0A08;margin-bottom:24px;">Works with</h2>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:20px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0A0A08;margin-bottom:8px;">Bazaraki.com</h4>
+        <p style="font-size:12px;color:#636e72;line-height:1.7;">Cyprus marketplace requires real image URLs. Generates exactly what Bazaraki's XML feed importer expects.</p>
+      </div>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:20px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0A0A08;margin-bottom:8px;">Google Shopping</h4>
+        <p style="font-size:12px;color:#636e72;line-height:1.7;">Merchant Center rejects /web/image/ routes. Real .jpg URLs pass validation and appear in Shopping ads.</p>
+      </div>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:20px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0A0A08;margin-bottom:8px;">Facebook Catalog</h4>
+        <p style="font-size:12px;color:#636e72;line-height:1.7;">Facebook requires stable, publicly accessible image URLs. Re-exports automatically on image change.</p>
+      </div>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:20px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0A0A08;margin-bottom:8px;">softg_xml_feed_generator</h4>
+        <p style="font-size:12px;color:#636e72;line-height:1.7;">Uses image_url and extra_image_url_1..14 fields from this module as image sources in all feeds.</p>
+      </div>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:20px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0A0A08;margin-bottom:8px;">Headless storefronts</h4>
+        <p style="font-size:12px;color:#636e72;line-height:1.7;">Next.js, Nuxt, Astro - any headless front-end can consume the public image URLs via Odoo's JSON API.</p>
+      </div>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:20px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0A0A08;margin-bottom:8px;">Supplier sync feeds</h4>
+        <p style="font-size:12px;color:#636e72;line-height:1.7;">Drop-shipping and multi-supplier setups can import supplier image URLs bidirectionally using the inbound feature.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="font-size:28px;font-weight:900;color:#0A0A08;margin-bottom:24px;">Technical specs</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;width:200px;background:#f8f9fa;">Module name</td><td style="padding:12px 16px;font-weight:700;color:#E8521A;">softg_product_image_publisher</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Version</td><td style="padding:12px 16px;">19.0.1.0.0</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Odoo target</td><td style="padding:12px 16px;">19 Community + Enterprise</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">License</td><td style="padding:12px 16px;">OPL-1</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Dependencies</td><td style="padding:12px 16px;">product, website_sale</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Server requirements</td><td style="padding:12px 16px;">nginx or any static web server (setup guide included)</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Image slots</td><td style="padding:12px 16px;">1 main + 14 extra per product</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Lines of code</td><td style="padding:12px 16px;">~1,019 Python + XML</td></tr>
+        <tr><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Backports</td><td style="padding:12px 16px;">16.0 · 17.0 · 18.0 available on request</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span6">
+      <h3 style="font-size:20px;font-weight:900;color:#0A0A08;margin-bottom:12px;">Support</h3>
+      <p style="font-size:14px;color:#636e72;line-height:1.8;"><strong>Email:</strong> support@softg.dev<br/><strong>Website:</strong> softg.dev<br/><strong>Free updates</strong> for the 19.0 major version included.<br/>Backports to 16.0, 17.0, 18.0 available on request.</p>
+    </div>
+    <div class="oe_span6">
+      <h3 style="font-size:20px;font-weight:900;color:#0A0A08;margin-bottom:12px;">About SoftG</h3>
+      <p style="font-size:14px;color:#636e72;line-height:1.8;">Odoo Ready Partner based in Cyprus and Canada. Real implementations across medical, retail, F&amp;B, supplements, and construction. No offshore handoff - the engineer on your first call is the one who builds it.</p>
+    </div>
   </div>
 </section>

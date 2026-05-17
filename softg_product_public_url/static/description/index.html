@@ -1,5 +1,159 @@
 <section class="oe_container">
   <div class="oe_row oe_spaced">
-    <img src="index.png" style="width:100%;display:block;"/>
+    <div class="oe_span12" style="text-align:center;padding:20px 0 10px;">
+      <p style="color:#6366F1;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;">SoftG Official Module · v19.0.1.0.2</p>
+      <h2 class="oe_slogan" style="font-size:42px;font-weight:900;color:#0B0F1A;">Product Public URL &amp; Clean Slug</h2>
+      <h3 class="oe_slogan" style="font-size:18px;color:#636e72;">SEO-friendly product URLs with automatic 301 redirects on rename - never break a link again.</h3>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span3" style="text-align:center;padding:24px 10px;">
+      <div style="font-size:36px;font-weight:900;color:#6366F1;">/shop/</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#636e72;margin-top:6px;">Clean URL path</div>
+    </div>
+    <div class="oe_span3" style="text-align:center;padding:24px 10px;">
+      <div style="font-size:42px;font-weight:900;color:#6366F1;">301</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#636e72;margin-top:6px;">Auto redirect on rename</div>
+    </div>
+    <div class="oe_span3" style="text-align:center;padding:24px 10px;">
+      <div style="font-size:42px;font-weight:900;color:#6366F1;">820</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#636e72;margin-top:6px;">Products in 3 seconds</div>
+    </div>
+    <div class="oe_span3" style="text-align:center;padding:24px 10px;">
+      <div style="font-size:42px;font-weight:900;color:#6366F1;">0</div>
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#636e72;margin-top:6px;">Infra changes needed</div>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span6">
+      <h2 style="font-size:28px;font-weight:900;color:#0B0F1A;margin-bottom:16px;">The problem</h2>
+      <p style="font-size:14px;line-height:1.8;color:#636e72;">Odoo's default product URLs end with the database ID - useful for the router, ugly for customers and search engines. Third-party themes often inject SKU prefixes too, making URLs even messier.</p>
+      <p style="font-size:14px;line-height:1.8;color:#636e72;margin-top:12px;">You also can't rename a product without breaking every inbound link, search engine cache, customer bookmark, and marketplace listing pointing at the old URL.</p>
+    </div>
+    <div class="oe_span6">
+      <div style="background:#fff5f5;border-left:4px solid #e17055;padding:20px 24px;margin-bottom:16px;border-radius:4px;">
+        <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e17055;font-weight:700;margin-bottom:10px;">Before</p>
+        <p style="font-size:12px;color:#c0392b;font-family:monospace;word-break:break-all;line-height:1.6;">/shop/65492163-dell-latitude-5330-notebook-warranty-1960</p>
+        <p style="font-size:12px;color:#636e72;margin-top:10px;">· SKU prepended &nbsp;· ID suffix at the end<br/>· Breaks on rename &nbsp;· Bad for SEO</p>
+      </div>
+      <div style="background:#f0f0ff;border-left:4px solid #6366F1;padding:20px 24px;border-radius:4px;">
+        <p style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#6366F1;font-weight:700;margin-bottom:10px;">After</p>
+        <p style="font-size:12px;color:#6366F1;font-family:monospace;word-break:break-all;line-height:1.6;">/shop/dell-latitude-5330-notebook-13-3-fhd-intel-core-i5</p>
+        <p style="font-size:12px;color:#636e72;margin-top:10px;">· Clean name-based slug &nbsp;· 301 created on rename<br/>· SEO + marketplace friendly &nbsp;· Both URLs resolve</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="font-size:28px;font-weight:900;color:#0B0F1A;text-align:center;margin-bottom:32px;">What you get</h2>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">⊕ Clean URLs</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Name-based slugs replace the default name-id pattern everywhere Odoo emits product URLs. Works with any theme.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">↺ Auto 301 redirects</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Rename a product - a 301 from old URL to new is created automatically. Bookmarks, Google cache, and marketplace listings keep working.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">◉ public_url field</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Absolute storefront URL on every product.template record. Ready to feed Bazaraki, Google Shopping, Facebook Catalog.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;"># Smart slug chain</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">slug(name) → SKU → product-id fallback. Auto-handles collisions, special characters, and empty product names safely.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">✂ Auto-truncation</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Long names truncate at word boundary. Default 80 chars, configurable via System Parameter. No mid-word cuts.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">⌚ Daily cron</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Backfills missing slugs and refreshes public_url fields automatically. 820 products updated in 3 seconds.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">↹ Bulk regenerate</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Select products from list view → Action → Regenerate Public URLs. Handles any scale, runs fast.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">⌂ No infra changes</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Pure Odoo module. No nginx config, no DNS changes, no Cloudflare setup. Install and it works immediately.</p>
+    </div>
+    <div class="oe_span4" style="padding:0 12px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">⚙ Multi-website aware</h4>
+      <p style="font-size:13px;color:#636e72;line-height:1.7;">Respects per-website domain configuration. Falls back to web.base.url for single-site deployments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="font-size:28px;font-weight:900;color:#0B0F1A;margin-bottom:24px;">Works perfectly with</h2>
+    </div>
+    <div class="oe_span6" style="padding:0 12px 20px;">
+      <div style="border:2px solid #6366F1;border-radius:6px;padding:24px;">
+        <h4 style="font-size:14px;font-weight:700;color:#6366F1;margin-bottom:8px;">softg_product_image_publisher</h4>
+        <p style="font-size:13px;color:#636e72;line-height:1.7;">Uses the same slug algorithm - image filenames and product URLs stay in sync. Install both for a complete marketplace-ready product record.</p>
+      </div>
+    </div>
+    <div class="oe_span6" style="padding:0 12px 20px;">
+      <div style="border:2px solid #6366F1;border-radius:6px;padding:24px;">
+        <h4 style="font-size:14px;font-weight:700;color:#6366F1;margin-bottom:8px;">softg_xml_feed_generator</h4>
+        <p style="font-size:13px;color:#636e72;line-height:1.7;">The XML Feed Generator consumes the public_url field directly as &lt;item_link&gt; in every feed. Install all three for a complete marketplace stack.</p>
+      </div>
+    </div>
+    <div class="oe_span6" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:24px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">Any Odoo theme</h4>
+        <p style="font-size:13px;color:#636e72;line-height:1.7;">Overrides only the URL slug controller. Leaves all theme markup, template inheritance, and styling completely intact.</p>
+      </div>
+    </div>
+    <div class="oe_span6" style="padding:0 12px 20px;">
+      <div style="border:1px solid #dfe6e9;border-radius:6px;padding:24px;">
+        <h4 style="font-size:14px;font-weight:700;color:#0B0F1A;margin-bottom:8px;">Any feed generator module</h4>
+        <p style="font-size:13px;color:#636e72;line-height:1.7;">Exposes a standard public_url field on product.template that any feed-generator module can read as the canonical product URL.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container oe_dark">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span12">
+      <h2 style="font-size:28px;font-weight:900;color:#0B0F1A;margin-bottom:24px;">Technical specs</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;width:200px;background:#f8f9fa;">Module name</td><td style="padding:12px 16px;font-weight:700;color:#6366F1;">softg_product_public_url</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Version</td><td style="padding:12px 16px;">19.0.1.0.2</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Odoo target</td><td style="padding:12px 16px;">19 Community + Enterprise</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">License</td><td style="padding:12px 16px;">OPL-1</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Dependencies</td><td style="padding:12px 16px;">product, website_sale</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Server requirements</td><td style="padding:12px 16px;font-weight:700;color:#6366F1;">None - pure Odoo module</td></tr>
+        <tr style="border-bottom:1px solid #dfe6e9;"><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Fields added</td><td style="padding:12px 16px;">2 on product.template (product_slug, public_url)</td></tr>
+        <tr><td style="padding:12px 16px;color:#636e72;background:#f8f9fa;">Backports</td><td style="padding:12px 16px;">16.0 · 17.0 · 18.0 available on request</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <div class="oe_span6">
+      <h3 style="font-size:20px;font-weight:900;color:#0B0F1A;margin-bottom:12px;">Support</h3>
+      <p style="font-size:14px;color:#636e72;line-height:1.8;"><strong>Email:</strong> support@softg.dev<br/><strong>Website:</strong> softg.dev<br/><strong>Free updates</strong> for the 19.0 major version included.<br/>Backports to 16.0, 17.0, 18.0 available on request.</p>
+    </div>
+    <div class="oe_span6">
+      <h3 style="font-size:20px;font-weight:900;color:#0B0F1A;margin-bottom:12px;">About SoftG</h3>
+      <p style="font-size:14px;color:#636e72;line-height:1.8;">Odoo Ready Partner based in Cyprus and Canada. Real implementations across medical, retail, F&amp;B, supplements, and construction. No offshore handoff - the engineer on your first call is the one who builds it.</p>
+    </div>
   </div>
 </section>

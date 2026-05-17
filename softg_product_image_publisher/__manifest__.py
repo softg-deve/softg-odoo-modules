@@ -58,8 +58,9 @@ Triggers
 * Daily cron — exports any product whose ``write_date`` is newer than
   its last successful export
 """,
-    'author': 'SoftG Ltd',
-    'website': 'https://softg.shop',
+    'author': 'Soft G Co. Ltd',
+    'website': 'https://www.softg.dev',
+    'support': 'support@softg.dev',
     'license': 'LGPL-3',
     'depends': [
         'product',

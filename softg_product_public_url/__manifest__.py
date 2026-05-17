@@ -48,8 +48,9 @@ Plus
 
 Designed to be sold standalone or as part of the SoftG suite.
 """,
-    'author': 'SoftG Ltd',
-    'website': 'https://softg.shop',
+    'author': 'Soft G Co. Ltd',
+    'website': 'https://www.softg.dev',
+    'support': 'support@softg.dev',
     'license': 'LGPL-3',
     'depends': [
         'product',

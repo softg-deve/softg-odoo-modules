@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_customer_statement_bulk_email_form" model="ir.ui.view">
+        <field name="name">customer.statement.bulk.email.wizard.form</field>
+        <field name="model">customer.statement.bulk.email.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Bulk Email — Review Customers">
+                <div class="alert alert-info">
+                    Found <strong><field name="total_count" readonly="1"/></strong> customers
+                    with transactions from <field name="date_from" readonly="1"/>
+                    to <field name="date_to" readonly="1"/>.
+                    <strong><field name="will_send_count" readonly="1"/></strong> will be sent.
+                </div>
+                <div class="alert alert-warning" invisible="no_email_count == 0">
+                    <field name="no_email_count" readonly="1"/> customer(s) have no email address and will be skipped.
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-3 align-items-center">
+                    <button name="action_select_all" string="Select All"
+                            type="object" class="btn btn-sm btn-secondary"/>
+                    <button name="action_unselect_all" string="Unselect All"
+                            type="object" class="btn btn-sm btn-secondary"/>
+                    <button name="action_select_positive"
+                            string="Select Green (owed to you)"
+                            type="object" class="btn btn-sm btn-success"/>
+                    <span class="badge rounded-pill text-bg-success fs-6">
+                        <field name="total_positive_balance" readonly="1" widget="float" digits="[16,2]"/>
+                    </span>
+                    <button name="action_select_negative"
+                            string="Select Red (credit balance)"
+                            type="object" class="btn btn-sm btn-danger"/>
+                    <span class="badge rounded-pill text-bg-danger fs-6">
+                        <field name="total_negative_balance" readonly="1" widget="float" digits="[16,2]"/>
+                    </span>
+                    <button name="action_select_zero"
+                            string="Select Gray (zero balance)"
+                            type="object" class="btn btn-sm btn-light"/>
+                </div>
+                <field name="line_ids">
+                    <list editable="top" limit="500"
+                          decoration-muted="outstanding_balance == 0"
+                          decoration-danger="outstanding_balance &lt; 0"
+                          decoration-success="outstanding_balance &gt; 0">
+                        <field name="sequence" string="#" readonly="1" width="40"/>
+                        <field name="include" string="✓"/>
+                        <field name="partner_id" string="Customer" readonly="1"/>
+                        <field name="email" string="Email"/>
+                        <field name="outstanding_balance" string="Balance" readonly="1"/>
+                    </list>
+                </field>
+                <footer>
+                    <button name="action_send_all" string="Send Emails"
+                            type="object" class="btn-primary" icon="fa-paper-plane"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

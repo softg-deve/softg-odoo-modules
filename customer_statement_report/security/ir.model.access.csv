@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_customer_statement_wizard,customer.statement.wizard,model_customer_statement_wizard,account.group_account_user,1,1,1,1
-access_customer_statement_bulk_email_wizard,customer.statement.bulk.email.wizard,model_customer_statement_bulk_email_wizard,base.group_user,1,1,1,1
-access_cs_bulk_email_line,customer.statement.bulk.email.line,model_customer_statement_bulk_email_line,base.group_user,1,1,1,1

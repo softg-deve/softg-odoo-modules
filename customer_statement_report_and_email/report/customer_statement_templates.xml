@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_customer_statement_document">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="wizard">
+            <t t-set="company" t-value="wizard.company_id"/>
+            <t t-set="bank" t-value="company.bank_ids[:1] if company.bank_ids else False"/>
+            <t t-set="currency_symbol" t-value="company.currency_id.symbol or ''"/>
+            <t t-set="report_data" t-value="wizard._get_all_report_data()"/>
+            <t t-foreach="report_data" t-as="pd">
+            <style>body,td,th,div,p,span{font-family:'DejaVu Sans',Arial,sans-serif!important;}</style>
+            <div class="page" style="font-family:'DejaVu Sans','Helvetica Neue',Arial,sans-serif;font-size:10pt;color:#222;background:#fff;">
+
+                <!-- ── HEADER: Logo + Company Info ── -->
+                <table width="100%" style="border-collapse:collapse;margin-bottom:0;">
+                    <tr>
+                        <td width="49%" align="center" style="vertical-align:middle;padding-bottom:12px;">
+                            <t t-if="company.logo">
+                                <img t-att-src="image_data_uri(company.logo)" width="320"
+                                     style="height:auto;display:block;margin:0 auto;"/>
+                            </t>
+                        </td>
+                        <td style="width:20px;padding:0;text-align:center;vertical-align:middle;">
+                            <div style="width:1px;background:#ccc;height:120px;margin:0 auto;"></div>
+                        </td>
+                        <td width="49%" style="vertical-align:middle;padding-bottom:12px;padding-left:16px;">
+                            <div style="font-size:12pt;font-weight:bold;color:#1B3460;margin-bottom:4px;">
+                                <t t-esc="company.name"/>
+                            </div>
+                            <div style="font-size:9pt;color:#444;line-height:1.7;">
+                                <t t-esc="company.street"/>
+                                <t t-if="company.street">, </t>
+                                <t t-esc="company.city"/><br/>
+                                <t t-if="company.zip"><t t-esc="company.zip"/> </t>
+                                <t t-esc="company.country_id.name"/><br/>
+                                <t t-if="company.phone">Tel: <t t-esc="company.phone"/><br/></t>
+                                <t t-if="company.email">Email: <t t-esc="company.email"/><br/></t>
+                                <t t-if="company.website">Web: <t t-esc="company.website"/><br/></t>
+                                <t t-if="company.vat">VAT No.: <t t-esc="company.vat"/></t>
+                                <t t-if="company.company_registry"> | Reg. No.: <t t-esc="company.company_registry"/></t>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <hr style="border:none;border-top:2.5px solid #1B3460;margin:0 0 16px 0;"/>
+
+                <!-- ── TITLE + DATE RANGE ── -->
+                <div style="text-align:center;margin-bottom:16px;">
+                    <div style="font-size:18pt;font-weight:bold;color:#1B3460;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:5px;">Customer Statement</div>
+                    <table style="margin:0 auto;border-collapse:collapse;">
+                        <tr>
+                            <td style="padding:0 12px;font-size:9.5pt;color:#444;">From: <strong><t t-esc="wizard.date_from.strftime('%d/%m/%Y')"/></strong></td>
+                            <td style="padding:0 12px;font-size:9.5pt;color:#444;">To: <strong><t t-esc="wizard.date_to.strftime('%d/%m/%Y')"/></strong></td>
+                            <td style="padding:0 12px;font-size:9.5pt;color:#444;border-left:1px solid #ccc;white-space:nowrap;">Statement Date: <strong><t t-esc="wizard.statement_date.strftime('%d/%m/%Y')"/></strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- ── CUSTOMER BLOCK ── -->
+                <div style="margin-bottom:10px;">
+                    <div style="font-size:9.5pt;font-weight:bold;color:#1B3460;margin-bottom:4px;">Customer:</div>
+                    <div style="font-size:11pt;font-weight:bold;color:#222;text-transform:uppercase;line-height:1.4;">
+                        <t t-esc="pd['partner_name']"/>
+                    </div>
+                    <t t-if="pd['partner_street'] or pd['partner_city']">
+                        <div style="font-size:9pt;color:#555;margin-top:2px;">
+                            <t t-if="pd['partner_street']"><t t-esc="pd['partner_street']"/>, </t>
+                            <t t-esc="pd['partner_city']"/>
+                            <t t-if="pd['partner_zip']"> <t t-esc="pd['partner_zip']"/></t>
+                            <t t-if="pd['partner_country']">, <t t-esc="pd['partner_country']"/></t>
+                            <t t-if="pd['partner_vat']"> | VAT: <t t-esc="pd['partner_vat']"/></t>
+                            <t t-if="pd['partner_phone']"> | Tel: <t t-esc="pd['partner_phone']"/></t>
+                        </div>
+                    </t>
+                </div>
+                <hr style="border:none;border-top:1px solid #ccc;margin:0 0 12px 0;"/>
+
+                <!-- ── TRANSACTIONS TABLE ── -->
+                <table width="100%" style="border-collapse:collapse;font-size:9pt;margin-bottom:16px;">
+                    <thead>
+                        <tr style="background:#1B3460;color:#fff;">
+                            <th style="padding:8px 10px;text-align:left;text-transform:uppercase;font-size:8.5pt;">Invoice No.</th>
+                            <th style="padding:8px 10px;text-align:center;text-transform:uppercase;font-size:8.5pt;width:110px;">Invoice Date</th>
+                            <th style="padding:8px 10px;text-align:center;text-transform:uppercase;font-size:8.5pt;width:110px;">Due Date</th>
+                            <th style="padding:8px 10px;text-align:right;text-transform:uppercase;font-size:8.5pt;width:130px;">Amount</th>
+                            <th style="padding:8px 10px;text-align:right;text-transform:uppercase;font-size:8.5pt;width:110px;">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-if="pd['lines']">
+                            <t t-foreach="pd['lines']" t-as="line">
+                                <tr t-att-style="'background:#f0f4ff;border-bottom:2px solid #dde6f5;' if line.get('is_opening') else 'border-bottom:1px solid #e8e8e8;'">
+                                    <td style="padding:8px 10px;"><t t-esc="line['invoice_no']"/></td>
+                                    <td style="padding:8px 10px;text-align:center;"><t t-esc="line['date']"/></td>
+                                    <td style="padding:8px 10px;text-align:center;">
+                                        <span t-att-style="'color:#c0392b;font-weight:600;' if line['overdue'] else 'color:#333;'">
+                                            <t t-esc="line['due_date'] or '-'"/>
+                                        </span>
+                                    </td>
+                                    <td style="padding:8px 10px;text-align:right;">
+                                        <t t-esc="line['amount_fmt']"/> <t t-esc="currency_symbol"/>
+                                    </td>
+                                    <td style="padding:8px 10px;text-align:right;font-weight:bold;color:#1B3460;">
+                                        <t t-esc="line['amount_fmt']"/> <t t-esc="currency_symbol"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <tr>
+                                <td colspan="5" style="padding:16px;text-align:center;color:#888;font-style:italic;">No transactions in this period.</td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <!-- ── TOTALS ── -->
+                <table width="100%" style="border-collapse:collapse;margin-bottom:20px;">
+                    <tr>
+                        <td width="55%"></td>
+                        <td width="45%" style="padding-left:20px;">
+                            <table width="100%" style="border-collapse:collapse;font-size:9.5pt;">
+                                <tr>
+                                    <td style="padding:4px 0;color:#444;">Total Invoices:</td>
+                                    <td style="padding:4px 0;text-align:right;"><t t-esc="pd['total_invoices_fmt']"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:4px 0;color:#444;">Total Payments:</td>
+                                    <td style="padding:4px 0;text-align:right;"><t t-esc="pd['total_payments_fmt']"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><hr style="border:none;border-top:1.5px solid #1B3460;margin:4px 0;"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:4px 0;font-weight:bold;color:#1B3460;font-size:10.5pt;text-transform:uppercase;">Outstanding Balance:</td>
+                                    <td style="padding:4px 0;text-align:right;font-weight:bold;color:#1B3460;font-size:13pt;">
+                                        <t t-esc="pd['outstanding_fmt']"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- ── NOTE + ASSISTANCE ── -->
+                <hr style="border:none;border-top:1px solid #ccc;margin:48px 0 10px 0;"/>
+                <table width="100%" style="border-collapse:collapse;margin-bottom:10px;">
+                    <tr>
+                        <td width="50%" style="vertical-align:top;padding-right:10px;border-right:1px solid #ccc;">
+                            <table style="border-collapse:collapse;">
+                                <tr>
+                                    <td width="36px" style="vertical-align:top;padding-top:2px;">
+                                        <div style="width:30px;height:30px;border:2px solid #1B3460;border-radius:50%;text-align:center;line-height:26px;color:#1B3460;font-size:16pt;font-weight:bold;">i</div>
+                                    </td>
+                                    <td style="padding-left:10px;">
+                                        <div style="font-weight:bold;color:#1B3460;font-size:9.5pt;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.05em;">Note</div>
+                                        <div style="font-size:9pt;color:#444;line-height:1.6;">
+                                            This statement reflects your account status as of <t t-esc="wizard.statement_date.strftime('%d/%m/%Y')"/>.<br/>
+                                            Kindly arrange payment at your convenience.
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="50%" style="vertical-align:top;padding-left:16px;">
+                            <table style="border-collapse:collapse;">
+                                <tr>
+                                    <td width="36px" style="vertical-align:top;padding-top:2px;">
+                                        <div style="width:28px;height:28px;border:2px solid #1B3460;border-radius:50%;text-align:center;line-height:24px;color:#1B3460;font-size:16pt;font-weight:bold;">?</div>
+                                    </td>
+                                    <td style="padding-left:8px;">
+                                        <div style="font-weight:bold;color:#1B3460;font-size:9.5pt;margin-bottom:3px;">Need assistance?</div>
+                                        <div style="font-size:9pt;color:#444;line-height:1.6;">Please contact us if you have any questions<br/>or require further information.</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- ── BANK / FOOTER ── -->
+                <hr style="border:none;border-top:1px solid #ccc;margin:0 0 8px 0;"/>
+                <t t-if="bank">
+                    <div style="text-align:center;font-size:8.5pt;color:#444;line-height:2.2;">
+                        <t t-if="bank.bank_id and bank.bank_id.name">
+                            <strong><t t-esc="bank.bank_id.name"/></strong> —
+                        </t>
+                        Account: <t t-esc="bank.acc_number"/>
+                        <t t-if="bank.bank_id and bank.bank_id.bic"> — BIC: <t t-esc="bank.bank_id.bic"/></t><br/>
+                        <strong>Reference:</strong> Use invoice number
+                        <t t-if="company.company_registry"> | <strong>Reg No.</strong> <t t-esc="company.company_registry"/></t>
+                        <t t-if="company.vat"> | <strong>VAT No.</strong> <t t-esc="company.vat"/></t>
+                    </div>
+                    <hr style="border:none;border-top:1px solid #ccc;margin:14px 16px;"/>
+                </t>
+
+                <div style="text-align:center;font-size:9.5pt;color:#1B3460;font-style:italic;">Thank you for your business and continued trust.</div>
+            </div>
+            </t>
+        </t>
+    </t>
+</template>
+</odoo>

@@ -20,7 +20,7 @@ Features:
 
 Accessible via: Accounting → Reporting → Customer Statement
     """,
-    'author': 'SoftG',
+    'author': 'Soft G Co. Ltd',
     'website': 'https://www.softg.dev',
     'support': 'support@softg.dev',
     'license': 'OPL-1',
